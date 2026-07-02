@@ -40,6 +40,15 @@ SECTION_EDIT_SCHEMA: dict[str, dict[str, Any]] = {
 			{"path": "secondary_button_label", "label": "Second button text", "type": "text"},
 			{"path": "secondary_button_url", "label": "Second button link", "type": "url"},
 			{"path": "image", "label": "Hero photo", "type": "image"},
+			{
+				"path": "layout",
+				"label": "Layout",
+				"type": "select",
+				"options": [
+					{"value": "split", "label": "Split (text + photo)"},
+					{"value": "background", "label": "Full-width background"},
+				],
+			},
 		]
 	},
 	"marquee": {
@@ -64,6 +73,8 @@ SECTION_EDIT_SCHEMA: dict[str, dict[str, Any]] = {
 				"fields": [
 					{"path": "title", "label": "Title", "type": "text"},
 					{"path": "description", "label": "Description", "type": "textarea"},
+					{"path": "icon", "label": "Icon (emoji or image URL)", "type": "text"},
+					{"path": "image", "label": "Feature image", "type": "image"},
 				],
 			}
 		],
@@ -148,6 +159,25 @@ SECTION_EDIT_SCHEMA: dict[str, dict[str, Any]] = {
 			{"path": "title", "label": "Heading", "type": "text"},
 			{"path": "body", "label": "Text", "type": "html"},
 		]
+	},
+	"page_banner": {
+		"fields": [
+			{"path": "title", "label": "Page title", "type": "text", "required": True},
+			{"path": "subtitle", "label": "Subtitle", "type": "textarea"},
+			{"path": "background_image", "label": "Background image", "type": "image"},
+		]
+	},
+	"menu_list": {
+		"fields": [
+			{"path": "title", "label": "Heading", "type": "text"},
+			{"path": "subtitle", "label": "Description", "type": "textarea"},
+		],
+	},
+	"porto_blog_team": {
+		"fields": [
+			{"path": "blog.title", "label": "Blog heading", "type": "text"},
+			{"path": "team.title", "label": "Team heading", "type": "text"},
+		],
 	},
 	"team": {
 		"fields": [{"path": "title", "label": "Heading", "type": "text"}],

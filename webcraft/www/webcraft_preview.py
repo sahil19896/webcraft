@@ -28,3 +28,7 @@ def get_context(context):
 	context.update(preview)
 	context.no_cache = 1
 	context.show_sidebar = 0
+	# Ensure template skin/stylesheet survive Frappe context defaults.
+	for key in ("template_skin_class", "template_stylesheet", "template_script", "google_fonts_url", "icon_stylesheet", "active_nav_url"):
+		if preview.get(key):
+			context[key] = preview[key]

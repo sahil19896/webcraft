@@ -804,4 +804,38 @@
 	border-radius: 8px;
 }
 
+.wc-customize__publish {
+	font-size: 11px;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+}
+
+.wc-menu-editor__hint {
+	margin: 0 0 0.65rem;
+	font-size: var(--text-sm);
+}
+
+.wc-menu-row {
+	display: grid;
+	grid-template-columns: 1fr 1.2fr auto auto;
+	gap: 0.35rem;
+	align-items: center;
+	margin-bottom: 0.35rem;
+}
+
+.wc-menu-row__newtab {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.25rem;
+	margin: 0;
+	font-size: var(--text-xs);
+	color: var(--text-muted);
+	white-space: nowrap;
+}
+
+.wc-menu-add {
+	margin-top: 0.35rem;
+}
+
 @media (max-width: 900px) {

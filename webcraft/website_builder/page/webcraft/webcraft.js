@@ -20,7 +20,6 @@ class WebCraftGallery {
 		this.category = "All";
 		this.device = "desktop";
 		this.render_shell();
-		this.on_show();
 	}
 
 	render_shell() {
@@ -41,6 +40,7 @@ class WebCraftGallery {
 						<div class="wc-store__filters" data-panel="themes">
 							<button class="wc-store__filter is-active" data-category="All">${__("All")}</button>
 							<button class="wc-store__filter" data-category="Corporate">${__("Corporate")}</button>
+							<button class="wc-store__filter" data-category="Agency">${__("Agency")}</button>
 							<button class="wc-store__filter" data-category="E-Commerce">${__("E-Commerce")}</button>
 						</div>
 					</nav>
@@ -111,9 +111,13 @@ class WebCraftGallery {
 	on_show() {
 		const route = frappe.get_route();
 		const template = route.length > 1 && route[1] !== "customize" ? route[1] : null;
-		Promise.all([this.load_catalog(), this.load_my_sites()]).then(() => {
+		if (this._loading) return this._loading;
+		this._loading = Promise.all([this.load_catalog(), this.load_my_sites()]).then(() => {
 			if (template) this.open_design(template);
+		}).finally(() => {
+			this._loading = null;
 		});
+		return this._loading;
 	}
 
 	load_catalog() {

@@ -10,16 +10,29 @@
 {% endblock %}
 
 {% block head_include %}
+	{% if google_fonts_url %}
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="{{ google_fonts_url }}" rel="stylesheet">
+	{% else %}
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+	{% endif %}
+	{% if icon_stylesheet %}
+	<link href="{{ icon_stylesheet }}" rel="stylesheet">
+	{% endif %}
 	<link rel="stylesheet" href="/assets/webcraft/css/webcraft.css">
+	{% if template_stylesheet %}
+	<link rel="stylesheet" href="{{ template_stylesheet }}">
+	{% endif %}
 	<style>{{ theme_css | safe }}</style>
 {% endblock %}
 
 {% block page_content %}
 <main class="wc-page wc-page--preview"
 	data-preview-template="{{ preview_template }}"
+	data-animations-enabled="{{ 0 if animations_enabled is sameas false or animations_enabled == 0 else 1 }}"
 	data-commerce-enabled="{{ 1 if commerce_enabled else 0 }}"
 	data-store-prefix="{{ store_route_prefix or '' }}"
 	data-cart-url="{{ cart_url or '' }}"
@@ -28,13 +41,16 @@
 		{% set type = section.type %}
 		{% set content = section.content %}
 		{% set style = section.style %}
+		{% set section_id = section.id %}
 		{% include "templates/sections/" ~ type ~ ".html" ignore missing %}
 	{% endfor %}
 </main>
 {% endblock %}
 
 {% block script %}
-	<script src="/assets/webcraft/js/webcraft.js"></script>
+	{% if template_script %}
+	<script src="{{ template_script }}"></script>
+	{% endif %}
 	{% if commerce_enabled %}
 	<script src="/assets/webcraft/js/webcraft-commerce.js"></script>
 	{% endif %}

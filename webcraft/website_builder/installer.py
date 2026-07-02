@@ -282,14 +282,14 @@ def _guess_asset_type(suffix: str) -> str:
 
 
 def sync_template_records() -> list[str]:
-	"""Register bundled templates as Website Template records."""
-	created = []
+	"""Register or update bundled templates as Website Template records."""
+	synced = []
 	root = get_templates_root()
 	if not root.exists():
-		return created
+		return synced
 
 	for entry in root.iterdir():
-		if not entry.is_dir():
+		if not entry.is_dir() or entry.name == "sections":
 			continue
 		manifest_path = entry / "template.json"
 		if not manifest_path.exists():
@@ -298,21 +298,25 @@ def sync_template_records() -> list[str]:
 			manifest = json.load(handle)
 
 		key = manifest.get("key") or entry.name
+		fields = {
+			"title": manifest.get("title") or key.title(),
+			"description": manifest.get("description") or "",
+			"category": manifest.get("category") or "Corporate",
+			"folder_path": entry.name,
+			"version": manifest.get("version") or "1.0.0",
+			"is_active": 1,
+		}
+
 		if frappe.db.exists("Website Template", key):
-			continue
+			current = frappe.db.get_value("Website Template", key, list(fields.keys()), as_dict=True) or {}
+			if any(current.get(field) != value for field, value in fields.items()):
+				frappe.db.set_value("Website Template", key, fields, update_modified=True)
+		else:
+			frappe.get_doc({"doctype": "Website Template", "template_key": key, **fields}).insert(
+				ignore_permissions=True
+			)
+		synced.append(key)
 
-		frappe.get_doc(
-			{
-				"doctype": "Website Template",
-				"template_key": key,
-				"title": manifest.get("title") or key.title(),
-				"description": manifest.get("description") or "",
-				"category": manifest.get("category") or "Corporate",
-				"folder_path": entry.name,
-				"version": manifest.get("version") or "1.0.0",
-				"is_active": 1,
-			}
-		).insert(ignore_permissions=True)
-		created.append(key)
-
-	return created
+	if synced:
+		frappe.db.commit()
+	return synced

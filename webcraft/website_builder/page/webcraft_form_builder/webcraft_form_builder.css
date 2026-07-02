@@ -1,0 +1,52 @@
+.wc-form-builder {
+	display: flex;
+	flex-direction: column;
+	height: calc(100vh - var(--navbar-height) - 1px);
+}
+
+.wc-form-builder__bar {
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
+	padding: 0.75rem 1rem;
+	border-bottom: 1px solid var(--border-color);
+	background: var(--card-bg);
+}
+
+.wc-form-builder__title {
+	display: flex;
+	flex-direction: column;
+	gap: 0.15rem;
+}
+
+.wc-form-builder__bar-spacer {
+	flex: 1;
+}
+
+.wc-form-builder__list {
+	padding: 1rem;
+	overflow: auto;
+}
+
+.wc-form-builder__row {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
+	padding: 0.85rem 1rem;
+	border: 1px solid var(--border-color);
+	border-radius: var(--border-radius);
+	background: var(--card-bg);
+	margin-bottom: 0.5rem;
+}
+
+.wc-form-builder__row-actions {
+	display: flex;
+	gap: 0.35rem;
+	flex-shrink: 0;
+}
+
+.wc-form-builder__empty {
+	text-align: center;
+	padding: 3rem 1rem;
+}

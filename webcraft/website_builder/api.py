@@ -11,6 +11,7 @@ from frappe.utils import cint
 from webcraft.website_builder.deploy import (
 	get_publish_status,
 	publish_project as deploy_publish_project,
+	unpublish_project as deploy_unpublish_project,
 )
 from webcraft.website_builder.installer import install_template_for_project, sync_template_records
 from webcraft.website_builder.preview import get_design_detail, list_bundled_designs
@@ -30,7 +31,7 @@ def get_my_sites() -> list[dict]:
 	sites = []
 	for row in frappe.get_all(
 		"Website Project",
-		fields=["name", "project_name", "status", "website_template", "website_theme", "homepage", "modified"],
+		fields=["name", "project_name", "status", "is_active", "website_template", "website_theme", "homepage", "modified"],
 		order_by="modified desc",
 	):
 		route = ""
@@ -48,6 +49,7 @@ def get_my_sites() -> list[dict]:
 				"live_url": f"/{route}" if route else "",
 				"template_title": template_title,
 				"preview_url": f"/{route}" if route else "",
+				"is_live": bool(row.is_active and row.status == "Published"),
 			}
 		)
 	return sites
@@ -59,6 +61,7 @@ def get_customize_context(project: str) -> dict:
 		frappe.throw("Project not found.")
 
 	from webcraft.website_builder.content.editor import build_pages_editor_payload
+	from webcraft.website_builder.content.menus import get_project_menus_detail
 
 	doc = frappe.get_doc("Website Project", project)
 	if not doc.website_theme:
@@ -78,6 +81,8 @@ def get_customize_context(project: str) -> dict:
 		"preview_url": f"/{route}" if route else "",
 		"theme": theme.as_dict(),
 		"pages": pages,
+		"menus": get_project_menus_detail(project),
+		"publish_status": get_publish_status(project),
 	}
 
 
@@ -180,6 +185,42 @@ def get_project_status(project: str) -> dict:
 
 
 @frappe.whitelist()
+def save_project_menus(project: str, menus: dict | str) -> dict:
+	"""Save header/footer navigation for a project."""
+	import json
+
+	from webcraft.website_builder.content.menus import save_project_menus as _save
+
+	if isinstance(menus, str):
+		menus = json.loads(menus) if menus else {}
+	return _save(project, menus)
+
+
+@frappe.whitelist()
+def unpublish_project(project: str) -> dict:
+	if not project or not frappe.db.exists("Website Project", project):
+		frappe.throw("Project not found.")
+	result = deploy_unpublish_project(project)
+	frappe.db.commit()
+	return result
+
+
+@frappe.whitelist()
+def update_submission_status(name: str, status: str) -> dict:
+	allowed = ("Unread", "Read", "Replied", "Archived")
+	if status not in allowed:
+		frappe.throw("Invalid status.")
+	if not name or not frappe.db.exists("Website Form Submission", name):
+		frappe.throw("Submission not found.")
+	if not frappe.has_permission("Website Form Submission", "write", name):
+		frappe.throw("Not permitted.")
+
+	frappe.db.set_value("Website Form Submission", name, "status", status)
+	frappe.db.commit()
+	return {"success": True, "status": status}
+
+
+@frappe.whitelist()
 def publish_project(project: str) -> dict:
 	return deploy_publish_project(project)
 
@@ -211,6 +252,11 @@ def submit_form(form_name: str, data: dict | str | None = None) -> dict:
 	settings = form_doc.form_settings or {}
 	if isinstance(settings, str):
 		settings = json.loads(settings) if settings else {}
+
+	from webcraft.website_builder.access import is_project_live
+
+	if form_doc.website_project and not is_project_live(form_doc.website_project):
+		return {"success": False, "message": "This form is not available."}
 
 	honeypot = settings.get("honeypot_field")
 	if honeypot and data.get(honeypot):

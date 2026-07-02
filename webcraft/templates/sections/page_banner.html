@@ -1,0 +1,12 @@
+<section class="wc-page-banner{% if content.layout == 'simple' %} wc-page-banner--simple{% elif content.layout == 'parallax' %} wc-page-banner--parallax{% endif %}" data-wc-section="page_banner"{% if section_id %} data-wc-section-id="{{ section_id }}"{% endif %}{% if content.background_image %} style="background-image:url('{{ content.background_image }}')"{% endif %}>
+	{% if content.layout != 'simple' %}
+	<div class="wc-page-banner__overlay"></div>
+	{% endif %}
+	<div class="wc-container wc-page-banner__inner">
+		<h1 class="wc-page-banner__title">{{ content.title | safe }}</h1>
+		{% if content.subtitle %}
+		<p class="wc-page-banner__subtitle">{{ content.subtitle }}</p>
+		{% endif %}
+		{% if content.show_divider %}<hr class="wc-porto-divider">{% endif %}
+	</div>
+</section>

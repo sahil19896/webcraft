@@ -1,3 +1,105 @@
+{% if content.layout == 'porto' %}
+<section class="wc-section wc-section--porto-default wc-contact-porto" data-wc-section="contact"{% if section_id %} data-wc-section-id="{{ section_id }}"{% endif %} id="contact">
+	<div class="wc-container">
+		<div class="wc-contact-porto__grid">
+			<div class="wc-contact-porto__col wc-contact-porto__col--info">
+				<div class="wc-contact-porto__row">
+					<div class="wc-contact-porto__subcol">
+						{% for block in content.info_blocks or [] %}
+						{% if block.type != 'map' %}
+						<div class="wc-contact-porto__block">
+							<h5 class="wc-contact-porto__label">{{ block.title }}</h5>
+							{% if block.phone %}
+							<p class="wc-contact-porto__line"><i class="fas fa-phone" aria-hidden="true"></i> {{ block.phone }}</p>
+							{% endif %}
+							{% if block.address %}
+							<p class="wc-contact-porto__line"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> {{ block.address }}</p>
+							{% endif %}
+						</div>
+						{% endif %}
+						{% endfor %}
+					</div>
+					{% if content.show_map %}
+					<div class="wc-contact-porto__subcol wc-contact-porto__subcol--map">
+						<div class="wc-contact-porto__map">
+							{% if content.map_embed_url %}
+							<iframe class="wc-contact-porto__map-embed" title="Map" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="{{ content.map_embed_url }}"></iframe>
+							{% else %}
+							<div class="wc-contact-porto__map-placeholder" aria-hidden="true"></div>
+							{% endif %}
+						</div>
+						{% if content.map_link %}
+						<p class="wc-contact-porto__directions"><a href="{{ content.map_link }}" target="_blank" rel="noopener">(Get Directions)</a></p>
+						{% endif %}
+					</div>
+					{% endif %}
+				</div>
+			</div>
+			<div class="wc-contact-porto__col wc-contact-porto__col--hours">
+				<div class="wc-contact-porto__row">
+					{% for hours in content.hours or [] %}
+					<div class="wc-contact-porto__subcol">
+						<div class="wc-contact-porto__hours">
+							<h5 class="wc-contact-porto__label">{{ hours.title }}</h5>
+							<ul class="wc-contact-porto__hours-list">
+								{% for line in hours.lines or [] %}
+								<li><i class="far fa-clock" aria-hidden="true"></i> {{ line }}</li>
+								{% endfor %}
+							</ul>
+						</div>
+					</div>
+					{% endfor %}
+				</div>
+			</div>
+			<div class="wc-contact-porto__col wc-contact-porto__col--form">
+				<h5 class="wc-contact-porto__label wc-contact-porto__label--form">{{ content.form_title or 'Send a Message' }}</h5>
+				{% if content.form %}
+					{{ render_form_html(content.form) | safe }}
+				{% else %}
+				<form class="wc-contact-porto__form contact-form" action="#" method="post">
+					<div class="wc-contact-porto__field">
+						<label for="wc-contact-name">Your name *</label>
+						<input id="wc-contact-name" type="text" name="name" required>
+					</div>
+					<div class="wc-contact-porto__field">
+						<label for="wc-contact-email">Your email address *</label>
+						<input id="wc-contact-email" type="email" name="email" required>
+					</div>
+					<div class="wc-contact-porto__field">
+						<label for="wc-contact-subject">Subject</label>
+						<input id="wc-contact-subject" type="text" name="subject">
+					</div>
+					<div class="wc-contact-porto__field">
+						<label for="wc-contact-message">Message *</label>
+						<textarea id="wc-contact-message" name="message" rows="3" required></textarea>
+					</div>
+					<button type="submit" class="wc-btn wc-btn--primary wc-btn--lg">Send Message</button>
+				</form>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</section>
+{% elif content.layout == 'porto-about' %}
+<section class="wc-section wc-section--porto-default wc-contact-porto-about" data-wc-section="contact"{% if section_id %} data-wc-section-id="{{ section_id }}"{% endif %}>
+	<div class="wc-container">
+		<div class="wc-porto-head wc-porto-head--center">
+			{% if content.title %}<h2 class="wc-porto-head__title">{{ content.title | safe }}</h2>{% endif %}
+			{% if content.subtitle %}<p>{{ content.subtitle }}</p>{% endif %}
+			{% if content.show_divider %}<hr class="wc-porto-divider">{% endif %}
+		</div>
+		<div class="wc-contact-porto-about__details">
+			{% for block in content.info_blocks or [] %}
+			<div class="wc-contact-porto-about__block">
+				<h5 class="wc-contact-porto__label">{{ block.title }}</h5>
+				{% if block.phone %}<p class="wc-contact-porto__line"><i class="fas fa-phone" aria-hidden="true"></i> {{ block.phone }}</p>{% endif %}
+				{% if block.address %}<p class="wc-contact-porto__line"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> {{ block.address }}</p>{% endif %}
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+</section>
+{% else %}
 <section class="wc-section wc-animate" data-wc-section="contact"{% if section_id %} data-wc-section-id="{{ section_id }}"{% endif %} id="contact">
 	<div class="wc-container wc-contact">
 		<div class="wc-contact__info">
@@ -18,3 +120,4 @@
 		</div>
 	</div>
 </section>
+{% endif %}

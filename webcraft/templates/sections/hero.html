@@ -1,4 +1,40 @@
-<section class="wc-hero wc-animate wc-hero--{{ content.alignment or 'center' }}{% if content.overlay %} wc-hero--overlay{% endif %}" data-wc-section="hero"{% if section_id %} data-wc-section-id="{{ section_id }}"{% endif %}>
+{% if content.layout == 'slider' and content.slides %}
+<section class="wc-hero-slider" data-wc-section="hero" data-wc-hero-slider{% if section_id %} data-wc-section-id="{{ section_id }}"{% endif %}>
+	<div class="wc-hero-slider__track">
+		{% for slide in content.slides %}
+		<div class="wc-hero-slide{% if loop.first %} is-active{% endif %}" style="background-image:url('{{ slide.image }}')" data-wc-slide>
+			<div class="wc-hero-slide__overlay" aria-hidden="true"></div>
+			<div class="wc-container wc-hero-slide__content">
+				{% if slide.eyebrow %}
+				<p class="wc-hero-slide__eyebrow alternative-font" data-wc-appear="fadeInDownShorterPlus">
+					<span>{{ slide.eyebrow }}</span>
+					{% if slide.title_border_image %}
+					<img src="{{ slide.title_border_image }}" alt="" class="wc-hero-slide__eyebrow-border" data-wc-appear="fadeInLeftShorter" data-wc-appear-delay="250">
+					{% endif %}
+				</p>
+				{% endif %}
+				<h1 class="wc-hero-slide__title" data-wc-appear="blurIn" data-wc-appear-delay="1000">{{ slide.title }}</h1>
+				{% if slide.subtitle %}<p class="wc-hero-slide__subtitle" data-wc-appear="fadeInUpShorter" data-wc-appear-delay="2000">{{ slide.subtitle }}</p>{% endif %}
+				{% if slide.button_label %}
+				<a class="wc-btn wc-btn--primary wc-btn--lg" href="{{ slide.button_url or '#' }}" data-wc-appear="fadeInUpShorter" data-wc-appear-delay="2400">{{ slide.button_label }}</a>
+				{% endif %}
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+	<button type="button" class="wc-hero-slider__nav wc-hero-slider__nav--prev" aria-label="Previous slide">‹</button>
+	<button type="button" class="wc-hero-slider__nav wc-hero-slider__nav--next" aria-label="Next slide">›</button>
+	<div class="wc-hero-slider__dots" aria-hidden="true">
+		{% for slide in content.slides %}
+		<button type="button" class="wc-hero-slider__dot{% if loop.first %} is-active{% endif %}" data-wc-slide-dot="{{ loop.index0 }}"></button>
+		{% endfor %}
+	</div>
+</section>
+{% else %}
+<section class="wc-hero wc-animate wc-hero--{{ content.alignment or 'center' }}{% if content.layout == 'background' %} wc-hero--background{% endif %}{% if content.overlay %} wc-hero--overlay{% endif %}" data-wc-section="hero"{% if section_id %} data-wc-section-id="{{ section_id }}"{% endif %}{% if content.layout == 'background' and content.image %} style="background-image:url('{{ content.image }}')"{% endif %}>
+	{% if content.layout == 'background' and content.image %}
+	<div class="wc-hero__overlay" aria-hidden="true"></div>
+	{% endif %}
 	<div class="wc-container wc-hero__grid">
 		<div class="wc-hero__content">
 			{% if content.eyebrow %}
@@ -17,12 +53,15 @@
 				{% endif %}
 			</div>
 		</div>
-		{% if content.image %}
-		<div class="wc-hero__media">
-			<img src="{{ content.image }}" alt="{{ content.title or '' }}" loading="eager">
-		</div>
-		{% else %}
-		<div class="wc-hero__orb" aria-hidden="true"></div>
+		{% if content.layout != 'background' %}
+			{% if content.image %}
+			<div class="wc-hero__media">
+				<img src="{{ content.image }}" alt="{{ content.title or '' }}" loading="eager">
+			</div>
+			{% else %}
+			<div class="wc-hero__orb" aria-hidden="true"></div>
+			{% endif %}
 		{% endif %}
 	</div>
 </section>
+{% endif %}

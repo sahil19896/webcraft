@@ -47,9 +47,13 @@ def find_published_project_by_prefix(prefix: str) -> dict | None:
 		return None
 	project_name = frappe.db.sql(
 		"""
-		SELECT DISTINCT website_project
-		FROM `tabWebsite Page`
-		WHERE published = 1 AND (route = %s OR route LIKE %s)
+		SELECT DISTINCT wp.website_project
+		FROM `tabWebsite Page` wp
+		INNER JOIN `tabWebsite Project` proj ON proj.name = wp.website_project
+		WHERE wp.published = 1
+			AND proj.is_active = 1
+			AND proj.status = 'Published'
+			AND (wp.route = %s OR wp.route LIKE %s)
 		LIMIT 1
 		""",
 		(prefix, f"{prefix}/%"),
@@ -143,6 +147,11 @@ def _base_store_sections(project_name: str, route_prefix: str, is_preview: bool,
 
 
 def build_live_dynamic_context(parsed: dict[str, Any]) -> dict[str, Any]:
+	from webcraft.website_builder.access import is_project_live
+
+	if not is_project_live(parsed["project_name"]):
+		frappe.throw("This site is not available.", frappe.DoesNotExistError)
+
 	project = frappe.get_doc("Website Project", parsed["project_name"])
 	theme = get_theme_variables(project.website_theme)
 	menus = get_menus(project.name)

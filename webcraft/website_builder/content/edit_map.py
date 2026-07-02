@@ -16,6 +16,7 @@ from webcraft.website_builder.content.schema import get_section_edit_schema, is_
 SECTION_FIELD_SELECTORS: dict[str, dict[str, str]] = {
 	"header": {
 		"logo_text": ".wc-logo",
+		"logo_image": ".wc-logo__image",
 		"cta_label": ".wc-header__actions .wc-btn--primary",
 	},
 	"hero": {
@@ -58,6 +59,18 @@ SECTION_FIELD_SELECTORS: dict[str, dict[str, str]] = {
 	"text": {
 		"title": "h2",
 		"body": ".wc-text__body",
+	},
+	"page_banner": {
+		"title": ".wc-page-banner__title",
+		"subtitle": ".wc-page-banner__subtitle",
+	},
+	"menu_list": {
+		"title": ".wc-section__head h2, .wc-porto-head h2",
+		"subtitle": ".wc-section__head p, .wc-porto-head p",
+	},
+	"porto_blog_team": {
+		"blog.title": ".wc-porto-blog-team__col--blog .wc-porto-head h2",
+		"team.title": ".wc-porto-blog-team__col--team .wc-porto-head h2",
 	},
 	"team": {
 		"title": ".wc-section__title, h2",
@@ -126,7 +139,12 @@ SECTION_REPEATER_SELECTORS: dict[str, dict[str, dict[str, str]]] = {
 	"team": {
 		"members": {
 			"container": ".wc-card--team",
-			"fields": {"name": "h3", "role": ".wc-muted", "bio": "p:not(.wc-muted)"},
+			"fields": {
+				"name": "h3",
+				"role": ".wc-muted",
+				"bio": "p:not(.wc-muted)",
+				"photo": ".wc-team__photo",
+			},
 		}
 	},
 	"category_tiles": {

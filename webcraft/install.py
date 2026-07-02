@@ -17,7 +17,7 @@ def sync_desk_pages():
 	import frappe
 	from frappe.modules import get_module_path, scrub
 
-	for page_name in ("webcraft", "webcraft-customize"):
+	for page_name in ("webcraft", "webcraft-customize", "webcraft-form-builder"):
 		if not frappe.db.exists("Page", page_name):
 			continue
 		doc = frappe.get_doc("Page", page_name)

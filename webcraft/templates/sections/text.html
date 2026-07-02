@@ -1,6 +1,27 @@
-<section class="wc-section wc-animate" data-wc-section="text"{% if section_id %} data-wc-section-id="{{ section_id }}"{% endif %}>
-	<div class="wc-container wc-prose wc-text__body">
-		{% if content.title %}<h2>{{ content.title }}</h2>{% endif %}
-		{{ content.body | safe }}
+{% if content.layout == 'porto-about' %}
+<section class="wc-section wc-section--porto-default wc-text-porto-about" data-wc-section="text"{% if section_id %} data-wc-section-id="{{ section_id }}"{% endif %}>
+	<div class="wc-container wc-text-porto-about__inner">
+		{% if content.image %}
+		<img class="wc-text-porto-about__float-image" src="{{ content.image }}" alt="{{ content.title or '' }}" loading="lazy">
+		{% endif %}
+		<div class="wc-text-porto-about__body">
+			{% if content.title %}<h2 class="wc-text-porto-about__title">{{ content.title }}</h2>{% endif %}
+			{{ content.body | safe }}
+		</div>
 	</div>
 </section>
+{% else %}
+<section class="wc-section wc-animate" data-wc-section="text"{% if section_id %} data-wc-section-id="{{ section_id }}"{% endif %}>
+	<div class="wc-container{% if content.image %} wc-text-grid{% if content.image_float %} wc-text-grid--float-{{ content.image_float }}{% endif %}{% endif %}">
+		{% if content.image %}
+		<div class="wc-text__media">
+			<img src="{{ content.image }}" alt="{{ content.title or '' }}" loading="lazy">
+		</div>
+		{% endif %}
+		<div class="wc-prose wc-text__body">
+			{% if content.title %}<h2>{{ content.title }}</h2>{% endif %}
+			{{ content.body | safe }}
+		</div>
+	</div>
+</section>
+{% endif %}

@@ -1,0 +1,21 @@
+{
+ "content": null,
+ "creation": "2026-06-29 20:00:00.000000",
+ "docstatus": 0,
+ "doctype": "Page",
+ "idx": 0,
+ "modified": "2026-06-29 20:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Website Builder",
+ "name": "webcraft-form-builder",
+ "owner": "Administrator",
+ "page_name": "webcraft-form-builder",
+ "roles": [
+  {"role": "System Manager"},
+  {"role": "Website Manager"},
+  {"role": "Administrator"}
+ ],
+ "standard": "Yes",
+ "system_page": 0,
+ "title": "Form Builder"
+}

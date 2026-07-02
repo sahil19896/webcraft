@@ -1,0 +1,21 @@
+<section class="wc-section wc-gallery{% if content.layout == 'porto' %} wc-gallery--porto{% endif %}" data-wc-section="gallery"{% if section_id %} data-wc-section-id="{{ section_id }}"{% endif %}>
+	<div class="wc-container">
+		{% if content.title or content.subtitle %}
+		<div class="wc-porto-head" data-wc-appear="fadeInUpShorter">
+			{% if content.title %}<h2>{{ content.title | safe }}</h2>{% endif %}
+			{% if content.subtitle %}<p>{{ content.subtitle }}</p>{% endif %}
+			{% if content.show_divider %}<hr class="wc-porto-divider">{% endif %}
+		</div>
+		{% endif %}
+		{% if content.images %}
+		<div class="wc-gallery__grid">
+			{% for image in content.images %}
+			<figure class="wc-gallery__item">
+				<img src="{{ image.url or image }}" alt="{{ image.caption or '' }}" loading="lazy">
+				{% if image.caption %}<figcaption>{{ image.caption }}</figcaption>{% endif %}
+			</figure>
+			{% endfor %}
+		</div>
+		{% endif %}
+	</div>
+</section>

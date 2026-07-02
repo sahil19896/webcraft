@@ -1,0 +1,1329 @@
+/* Porto Restaurant — faithful styling scoped to .wc-template-porto-restaurant */
+
+body.wc-body.wc-template-porto-restaurant,
+.wc-template-porto-restaurant,
+.wc-template-porto-restaurant .wc-page {
+	font-family: "Open Sans", Arial, sans-serif !important;
+	color: #212529;
+	-webkit-font-smoothing: antialiased;
+}
+
+.wc-template-porto-restaurant {
+	--porto-primary: #e09b23;
+	--porto-secondary: #344257;
+	--porto-serif: Georgia, "Times New Roman", serif;
+	--porto-display: "Shadows Into Light", cursive;
+	--porto-tertiary: #d1e7e7;
+	--porto-quaternary: #edeada;
+	--porto-heading-muted: #777;
+	--porto-body-muted: #5e5e5e;
+	--wc-font: "Open Sans", Arial, sans-serif;
+	--wc-heading-font: "Open Sans", Arial, sans-serif;
+}
+
+.wc-template-porto-restaurant .alternative-font {
+	font-family: var(--porto-display);
+	color: var(--porto-primary);
+	font-size: 1.35rem;
+	font-weight: 400;
+	line-height: 1.4;
+	text-transform: none;
+	letter-spacing: 0;
+	font-style: normal;
+}
+
+.wc-template-porto-restaurant .wc-page {
+	background: #fff;
+}
+
+/* ── Header (two-tier Porto layout) ── */
+.wc-template-porto-restaurant .wc-header--porto {
+	position: sticky;
+	top: 0;
+	z-index: 200;
+	background: #fff;
+	border-bottom: none;
+	backdrop-filter: none;
+}
+
+.wc-template-porto-restaurant .wc-header-top {
+	background: var(--porto-secondary);
+	color: rgba(255, 255, 255, 0.85);
+	font-size: 0.85rem;
+}
+
+.wc-template-porto-restaurant .wc-header-top__inner {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	min-height: 2.5rem;
+	gap: 1rem;
+}
+
+.wc-template-porto-restaurant .wc-header-top a {
+	color: rgba(255, 255, 255, 0.9);
+	text-decoration: none;
+}
+
+.wc-template-porto-restaurant .wc-header-top a:hover {
+	color: var(--porto-primary);
+}
+
+.wc-template-porto-restaurant .wc-header-top__phone i {
+	color: var(--porto-primary);
+	margin-right: 0.35rem;
+}
+
+.wc-template-porto-restaurant .wc-header-main {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1.5rem;
+	min-height: 5rem;
+	padding-block: 0.5rem;
+}
+
+.wc-template-porto-restaurant .wc-header--porto .wc-logo {
+	color: var(--porto-secondary);
+}
+
+.wc-template-porto-restaurant .wc-header--porto .wc-logo__image {
+	height: 50px;
+	width: auto;
+	max-width: 140px;
+	object-fit: contain;
+}
+
+.wc-template-porto-restaurant .wc-header--porto .wc-nav {
+	gap: 0;
+}
+
+.wc-template-porto-restaurant .wc-header--porto .wc-nav a {
+	color: #444;
+	font-size: 0.78rem;
+	font-weight: 600;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	padding: 0.65rem 1rem;
+	border-radius: 0;
+	text-decoration: none;
+	transition: background 0.2s, color 0.2s;
+}
+
+.wc-template-porto-restaurant .wc-header--porto .wc-nav a:hover,
+.wc-template-porto-restaurant .wc-header--porto .wc-nav a.is-active {
+	background: var(--porto-primary);
+	color: #fff;
+}
+
+.wc-template-porto-restaurant .wc-header--porto .wc-header__actions {
+	display: none;
+}
+
+/* ── Hero slider ── */
+.wc-template-porto-restaurant .wc-hero-slider {
+	position: relative;
+	height: clamp(28rem, 55vh, 40rem);
+	overflow: hidden;
+	background: #555;
+}
+
+.wc-template-porto-restaurant .wc-hero-slide {
+	position: absolute;
+	inset: 0;
+	background-size: cover;
+	background-position: center;
+	opacity: 0;
+	transition: opacity 1s ease;
+	display: flex;
+	align-items: center;
+}
+
+.wc-template-porto-restaurant .wc-hero-slide.is-active {
+	opacity: 1;
+	z-index: 1;
+}
+
+.wc-template-porto-restaurant .wc-hero-slide__overlay {
+	position: absolute;
+	inset: 0;
+	background: rgba(0, 0, 0, 0.25);
+}
+
+.wc-template-porto-restaurant .wc-hero-slide__content {
+	position: relative;
+	z-index: 2;
+	color: #fff;
+	max-width: 42rem;
+	padding-block: 2rem;
+}
+
+.wc-template-porto-restaurant .wc-hero-slide__eyebrow {
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
+	margin: 0 0 0.75rem;
+	color: #fff;
+}
+
+.wc-template-porto-restaurant .wc-hero-slide__eyebrow.alternative-font {
+	color: var(--porto-primary);
+	font-size: 1.5rem;
+}
+
+.wc-template-porto-restaurant .wc-hero-slide__title {
+	font-family: "Open Sans", Arial, sans-serif;
+	font-size: clamp(3rem, 8vw, 5.5rem);
+	font-weight: 800;
+	line-height: 1;
+	margin: 0 0 1rem;
+	text-transform: uppercase;
+	letter-spacing: 0.01em;
+	color: #fff;
+}
+
+.wc-template-porto-restaurant .wc-hero-slide__subtitle {
+	font-family: "Open Sans", Arial, sans-serif;
+	font-size: 1.25rem;
+	font-weight: 300;
+	margin: 0 0 1.75rem;
+	opacity: 0.95;
+	max-width: 32rem;
+}
+
+.wc-template-porto-restaurant .wc-hero-slider__nav {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	z-index: 5;
+	width: 2.75rem;
+	height: 2.75rem;
+	border: none;
+	background: rgba(0, 0, 0, 0.45);
+	color: #fff;
+	font-size: 1.5rem;
+	cursor: pointer;
+	transition: background 0.2s;
+}
+
+.wc-template-porto-restaurant .wc-hero-slider__nav:hover {
+	background: rgba(0, 0, 0, 0.7);
+}
+
+.wc-template-porto-restaurant .wc-hero-slider__nav--prev {
+	left: 0;
+}
+
+.wc-template-porto-restaurant .wc-hero-slider__nav--next {
+	right: 0;
+}
+
+.wc-template-porto-restaurant .wc-hero-slider__dots {
+	position: absolute;
+	bottom: 1.25rem;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 5;
+	display: flex;
+	gap: 0.5rem;
+}
+
+.wc-template-porto-restaurant .wc-hero-slider__dot {
+	width: 0.65rem;
+	height: 0.65rem;
+	border-radius: 50%;
+	border: 2px solid #fff;
+	background: transparent;
+	cursor: pointer;
+	padding: 0;
+}
+
+.wc-template-porto-restaurant .wc-hero-slider__dot.is-active {
+	background: #fff;
+}
+
+/* ── Section headings + divider ── */
+.wc-template-porto-restaurant .wc-porto-head {
+	text-align: center;
+	margin-bottom: 2.5rem;
+}
+
+.wc-template-porto-restaurant .wc-porto-head h2 {
+	font-family: "Open Sans", Arial, sans-serif;
+	font-size: clamp(1.75rem, 3vw, 2.25rem);
+	font-weight: 400;
+	margin: 0 0 0.75rem;
+	color: #212529;
+}
+
+.wc-template-porto-restaurant .wc-porto-head--dark h2 {
+	color: var(--porto-heading-muted);
+}
+
+.wc-template-porto-restaurant .wc-porto-head--dark p {
+	color: var(--porto-body-muted);
+}
+
+.wc-template-porto-restaurant .wc-porto-head p {
+	font-family: "Open Sans", Arial, sans-serif;
+	font-weight: 400;
+	color: #777;
+	max-width: 42rem;
+	margin: 0 auto;
+	line-height: 1.7;
+}
+
+.wc-template-porto-restaurant .wc-porto-head--center {
+	text-align: center;
+}
+
+.wc-template-porto-restaurant .wc-porto-head__title {
+	font-size: 1.35rem;
+	font-weight: 600;
+}
+
+/* ── Inner page sections (Porto section-default) ── */
+.wc-template-porto-restaurant .wc-section--porto-default {
+	padding: 2.5rem 0 3rem;
+	background: #fff;
+}
+
+.wc-template-porto-restaurant .wc-page-banner--simple + .wc-section--porto-default {
+	padding-top: 1rem;
+}
+
+.wc-template-porto-restaurant .wc-page-banner--simple {
+	margin-bottom: 0;
+	padding-bottom: 0.5rem;
+}
+
+.wc-template-porto-restaurant .wc-page-banner--simple .wc-porto-divider {
+	margin-bottom: 0;
+}
+
+.wc-template-porto-restaurant .wc-porto-divider {
+	height: 56px;
+	border: none;
+	margin: 1.25rem auto 0;
+	background: transparent var(--wc-porto-divider, url("/assets/webcraft/files/porto-restaurant/custom-divider-1.png")) no-repeat center center;
+}
+
+/* ── Thumb-info feature cards ── */
+.wc-template-porto-restaurant .wc-porto-thumb {
+	position: relative;
+	border: 1px solid #ddd;
+	background: #fff;
+	text-align: center;
+	margin-bottom: 1.5rem;
+}
+
+.wc-template-porto-restaurant .wc-porto-thumb::before,
+.wc-template-porto-restaurant .wc-porto-thumb::after {
+	content: "";
+	position: absolute;
+	border: 1px solid #ddd;
+	left: 2px;
+	right: 2px;
+	height: 5px;
+	pointer-events: none;
+}
+
+.wc-template-porto-restaurant .wc-porto-thumb::before {
+	bottom: -5px;
+}
+
+.wc-template-porto-restaurant .wc-porto-thumb::after {
+	bottom: -9px;
+	left: 5px;
+	right: 5px;
+}
+
+.wc-template-porto-restaurant .wc-porto-thumb__media {
+	position: relative;
+	overflow: visible;
+}
+
+.wc-template-porto-restaurant .wc-porto-thumb__media > img:first-child {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+.wc-template-porto-restaurant .wc-porto-thumb__icon {
+	position: absolute;
+	left: 50%;
+	bottom: -1.75rem;
+	transform: translateX(-50%);
+	width: auto;
+	max-height: 3.5rem;
+	z-index: 2;
+}
+
+.wc-template-porto-restaurant .wc-porto-thumb__caption {
+	padding: 2.25rem 1.25rem 1.5rem;
+}
+
+.wc-template-porto-restaurant .wc-hero-slide__eyebrow-border {
+	height: 1.25rem;
+	width: auto;
+}
+
+.wc-template-porto-restaurant .wc-porto-thumb__caption h3 {
+	font-family: "Open Sans", Arial, sans-serif;
+	font-size: 1.35rem;
+	font-weight: 600;
+	margin: 0 0 0.65rem;
+	color: #444;
+}
+
+.wc-template-porto-restaurant .wc-porto-thumb__caption p {
+	font-family: "Open Sans", Arial, sans-serif;
+	font-size: 0.95rem;
+	color: #777;
+	margin: 0;
+	line-height: 1.65;
+}
+
+/* ── Special menu list (demo-restaurant.css) ── */
+.wc-template-porto-restaurant .wc-porto-special {
+	padding: 3rem 0 5rem;
+	background-color: #fff;
+	background-size: auto;
+	background-repeat: no-repeat;
+	background-position: center bottom;
+	min-height: 12rem;
+}
+
+.wc-template-porto-restaurant .wc-porto-special .wc-container {
+	position: relative;
+	z-index: 1;
+}
+
+.wc-template-porto-restaurant .wc-porto-special__list {
+	list-style: none;
+	margin: 2rem auto 0;
+	padding: 0;
+	max-width: 52rem;
+	text-align: left;
+}
+
+.wc-template-porto-restaurant .wc-porto-special__item {
+	margin: 0 0 2rem;
+	clear: both;
+	overflow: hidden;
+}
+
+.wc-template-porto-restaurant .wc-porto-special__item img {
+	float: left;
+	width: 68px;
+	height: 68px;
+	object-fit: cover;
+	border-radius: 50%;
+	margin: 0 1.5625rem 0 0;
+}
+
+.wc-template-porto-restaurant .wc-porto-special__item h3 {
+	font-family: var(--porto-serif);
+	font-style: italic;
+	font-size: 1.5rem;
+	font-weight: 400;
+	margin: 0;
+	padding: 0.4375rem 0 0.25rem 5.9375rem;
+	color: #444;
+	text-transform: none;
+}
+
+.wc-template-porto-restaurant .wc-porto-special__item p {
+	font-family: var(--porto-serif);
+	font-style: italic;
+	font-size: 1.3em;
+	color: #777;
+	margin: 0 0 0 5.9375rem;
+	position: relative;
+	display: block;
+}
+
+.wc-template-porto-restaurant .wc-porto-special__item p span {
+	background: #fff;
+	padding: 0 0.625rem 0 0;
+	position: relative;
+	z-index: 2;
+	display: inline-block;
+}
+
+.wc-template-porto-restaurant .wc-porto-special__item p::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: 5px;
+	width: 100%;
+	border-bottom: 2px dotted #ddd;
+	z-index: 1;
+}
+
+.wc-template-porto-restaurant .wc-porto-special__price {
+	float: right;
+	font-size: 1.375rem;
+	font-weight: 700;
+	color: #444;
+	background: #fff;
+	padding: 0 0 0 0.625rem;
+	position: relative;
+	z-index: 3;
+	margin-top: -1.625rem;
+	display: inline-block;
+}
+
+.wc-template-porto-restaurant .wc-porto-special__item h3 em {
+	font-style: italic;
+	font-size: 0.85em;
+}
+
+.wc-template-porto-restaurant .wc-porto-special .wc-btn--lg {
+	padding: 0.85rem 2rem;
+	font-size: 1rem;
+	margin-top: 1rem;
+	margin-bottom: 2rem;
+}
+
+/* ── Page banners ── */
+.wc-template-porto-restaurant .wc-page-banner {
+	padding: 5rem 0;
+}
+
+.wc-template-porto-restaurant .wc-page-banner__overlay {
+	background: rgba(52, 66, 87, 0.72);
+}
+
+/* ── Testimonials parallax ── */
+.wc-template-porto-restaurant .wc-testimonials--photo {
+	padding: 4rem 0;
+}
+
+.wc-template-porto-restaurant .wc-testimonials--photo .wc-quote {
+	border: none;
+	box-shadow: none;
+	background: transparent;
+	text-align: center;
+	padding: 2rem 1rem;
+}
+
+.wc-template-porto-restaurant .wc-testimonials--photo .wc-quote p {
+	font-size: 1.15rem;
+	font-style: italic;
+	color: #444;
+	line-height: 1.75;
+}
+
+.wc-template-porto-restaurant .wc-testimonials--photo .wc-quote footer {
+	align-items: center;
+}
+
+/* ── Gallery ── */
+.wc-template-porto-restaurant .wc-gallery__item {
+	position: relative;
+}
+
+.wc-template-porto-restaurant .wc-gallery__item img {
+	height: 14rem;
+	filter: grayscale(20%);
+	transition: filter 0.35s ease, transform 0.35s ease;
+}
+
+.wc-template-porto-restaurant .wc-gallery__item:hover img {
+	filter: grayscale(0%);
+	transform: scale(1.03);
+}
+
+/* ── Buttons ── */
+.wc-template-porto-restaurant .wc-btn--primary {
+	background: var(--porto-primary);
+	border-color: var(--porto-primary);
+	color: #fff;
+	border-radius: 4px;
+	font-weight: 600;
+	text-transform: none;
+	box-shadow: none;
+}
+
+.wc-template-porto-restaurant .wc-btn--primary:hover {
+	background: #cd8c1d;
+	border-color: #cd8c1d;
+}
+
+/* ── Footer ── */
+.wc-template-porto-restaurant .wc-footer {
+	background: var(--porto-secondary);
+	color: rgba(255, 255, 255, 0.85);
+}
+
+.wc-template-porto-restaurant .wc-footer a {
+	color: rgba(255, 255, 255, 0.85);
+}
+
+/* ── Porto footer bar ── */
+.wc-template-porto-restaurant .wc-footer--porto {
+	background: var(--porto-secondary);
+	color: rgba(255, 255, 255, 0.85);
+	padding: 0;
+	margin-top: 0;
+}
+
+.wc-template-porto-restaurant .wc-footer--porto__social-wrap {
+	padding: 2.5rem 0;
+	text-align: center;
+}
+
+.wc-template-porto-restaurant .wc-footer--porto__social-list {
+	display: flex;
+	justify-content: center;
+	gap: 0.65rem;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.wc-template-porto-restaurant .wc-footer--porto__social-item a {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 2.75rem;
+	height: 2.75rem;
+	border-radius: 50%;
+	background: rgba(255, 255, 255, 0.08);
+	color: rgba(255, 255, 255, 0.9);
+	text-decoration: none;
+	font-size: 1.1rem;
+	transition: background 0.2s, color 0.2s;
+}
+
+.wc-template-porto-restaurant .wc-footer--porto__social-item a:hover {
+	background: var(--porto-primary);
+	color: #fff;
+}
+
+.wc-template-porto-restaurant .wc-footer--porto__bar {
+	border-top: 1px solid rgba(255, 255, 255, 0.08);
+	background: color-mix(in srgb, var(--porto-secondary) 88%, #000);
+}
+
+.wc-template-porto-restaurant .wc-footer--porto__bar-inner {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
+	padding: 1.5rem 0;
+}
+
+.wc-template-porto-restaurant .wc-footer--porto__contact {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.75rem 1.5rem;
+	font-size: 0.88rem;
+	color: rgba(255, 255, 255, 0.85);
+}
+
+.wc-template-porto-restaurant .wc-footer--porto__contact-item {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.4rem;
+}
+
+.wc-template-porto-restaurant .wc-footer--porto__contact-item i {
+	color: var(--porto-primary);
+}
+
+.wc-template-porto-restaurant .wc-footer--porto__contact a {
+	color: rgba(255, 255, 255, 0.85);
+	text-decoration: none;
+}
+
+.wc-template-porto-restaurant .wc-footer--porto__contact a:hover {
+	color: var(--porto-primary);
+}
+
+.wc-template-porto-restaurant .wc-footer--porto__copy {
+	margin: 0;
+	font-size: 0.85rem;
+	opacity: 0.85;
+	text-align: right;
+}
+
+/* ── Page banners ── */
+.wc-template-porto-restaurant .wc-page-banner--simple {
+	background: transparent;
+	padding: 3rem 0 1rem;
+	color: #212529;
+}
+
+.wc-template-porto-restaurant .wc-page-banner--simple .wc-page-banner__title {
+	color: #212529;
+	font-size: clamp(2rem, 5vw, 3rem);
+	font-weight: 400;
+}
+
+.wc-template-porto-restaurant .wc-page-banner--simple .wc-page-banner__subtitle {
+	color: #777;
+}
+
+.wc-template-porto-restaurant .wc-page-banner--parallax {
+	padding: 5rem 0;
+	background-size: cover;
+	background-position: center;
+}
+
+.wc-template-porto-restaurant .wc-page-banner--parallax .wc-page-banner__title {
+	color: #fff;
+	font-size: clamp(2rem, 5vw, 3rem);
+	font-weight: 400;
+}
+
+.wc-template-porto-restaurant .wc-porto-head--divider-only {
+	margin-bottom: 2rem;
+}
+
+/* ── Blog + team split (Porto section-quaternary / section-tertiary) ── */
+.wc-template-porto-restaurant .wc-porto-blog-team {
+	width: 100%;
+}
+
+.wc-template-porto-restaurant .wc-porto-blog-team__grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	min-height: 28rem;
+}
+
+.wc-template-porto-restaurant .wc-porto-blog-team__col {
+	padding: 3rem 0;
+}
+
+.wc-template-porto-restaurant .wc-porto-blog-team__col--blog {
+	background: var(--porto-quaternary);
+}
+
+.wc-template-porto-restaurant .wc-porto-blog-team__col--team {
+	background: var(--porto-tertiary);
+}
+
+.wc-template-porto-restaurant .wc-porto-blog-team__inner {
+	max-width: 34.6875rem;
+	padding: 0 1.875rem;
+}
+
+.wc-template-porto-restaurant .wc-porto-blog-team__inner--right {
+	margin-left: auto;
+	margin-right: 1.875rem;
+}
+
+.wc-template-porto-restaurant .wc-porto-blog-team__inner--left {
+	margin-right: auto;
+	margin-left: 1.875rem;
+}
+
+.wc-template-porto-restaurant .wc-porto-blog-list,
+.wc-template-porto-restaurant .wc-porto-team-list {
+	position: relative;
+	margin-top: 2rem;
+}
+
+.wc-template-porto-restaurant .wc-porto-carousel__nav {
+	position: absolute;
+	top: -3.25rem;
+	right: 0;
+	display: flex;
+	gap: 0.35rem;
+}
+
+.wc-template-porto-restaurant .wc-porto-carousel__btn {
+	width: 2rem;
+	height: 2rem;
+	border: 1px solid color-mix(in srgb, var(--porto-primary) 35%, transparent);
+	background: transparent;
+	color: var(--porto-primary);
+	font-size: 1.25rem;
+	line-height: 1;
+	cursor: pointer;
+	padding: 0;
+}
+
+.wc-template-porto-restaurant .wc-porto-carousel__btn:hover {
+	background: var(--porto-primary);
+	color: #fff;
+	border-color: var(--porto-primary);
+}
+
+.wc-template-porto-restaurant .wc-porto-blog-item {
+	display: flex;
+	gap: 1rem;
+	margin-bottom: 1.25rem;
+	align-items: flex-start;
+}
+
+.wc-template-porto-restaurant .wc-porto-blog-item__media {
+	flex: 0 0 165px;
+	max-width: 165px;
+}
+
+.wc-template-porto-restaurant .wc-porto-blog-item__media img {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+.wc-template-porto-restaurant .wc-porto-blog-item__body {
+	flex: 1;
+	min-width: 0;
+}
+
+.wc-template-porto-restaurant .wc-porto-blog-item h3 {
+	font-size: 1.15rem;
+	font-weight: 600;
+	margin: 0 0 0.5rem;
+	color: #212529;
+}
+
+.wc-template-porto-restaurant .wc-porto-blog-item h3 a,
+.wc-template-porto-restaurant .wc-porto-press-item h2 a {
+	color: #212529;
+	text-decoration: none;
+}
+
+.wc-template-porto-restaurant .wc-porto-blog-item p {
+	font-size: 0.95rem;
+	line-height: 1.65;
+	color: var(--porto-body-muted);
+	margin: 0 0 0.5rem;
+}
+
+.wc-template-porto-restaurant .wc-porto-blog-item__link,
+.wc-template-porto-restaurant .wc-porto-press-item__link {
+	color: var(--porto-primary);
+	text-decoration: none;
+	font-weight: 600;
+	font-size: 0.9rem;
+}
+
+.wc-template-porto-restaurant .wc-porto-team-track {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 0.625rem;
+}
+
+.wc-template-porto-restaurant .wc-porto-team-card {
+	background: transparent;
+	text-align: center;
+}
+
+.wc-template-porto-restaurant .wc-porto-team-card__photo img {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+.wc-template-porto-restaurant .wc-porto-team-card__caption {
+	background: #f7f7f7;
+	padding: 0.875rem;
+	margin: 0;
+}
+
+.wc-template-porto-restaurant .wc-porto-team-card__caption h3 {
+	font-size: 1.05rem;
+	font-weight: 600;
+	margin: 0.25rem 0 0;
+	color: #212529;
+}
+
+.wc-template-porto-restaurant .wc-porto-team-card__caption p {
+	margin: 0 0 0.5rem;
+	font-size: 0.95rem;
+	color: var(--porto-body-muted);
+}
+
+/* ── Menu tabs ── */
+.wc-template-porto-restaurant .wc-menu-list__tab-nav {
+	display: flex;
+	justify-content: center;
+	gap: 0;
+	margin-bottom: 2rem;
+	border-bottom: 1px solid #eee;
+}
+
+.wc-template-porto-restaurant .wc-menu-list__tab-btn {
+	border: none;
+	background: transparent;
+	padding: 0.85rem 1.5rem;
+	font-family: inherit;
+	font-size: 0.95rem;
+	font-weight: 600;
+	color: #777;
+	cursor: pointer;
+	border-bottom: 2px solid transparent;
+	margin-bottom: -1px;
+}
+
+.wc-template-porto-restaurant .wc-menu-list__tab-btn.is-active {
+	color: var(--porto-primary);
+	border-bottom-color: var(--porto-primary);
+}
+
+.wc-template-porto-restaurant .wc-menu-list__tab-panel {
+	display: none;
+}
+
+.wc-template-porto-restaurant .wc-menu-list__tab-panel.is-active {
+	display: block;
+}
+
+.wc-template-porto-restaurant .wc-menu-list__category-title {
+	text-align: center;
+	font-size: 0.85rem;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	margin: 2rem 0 1.25rem;
+	color: #444;
+}
+
+.wc-template-porto-restaurant .wc-menu-list__grid {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 1.5rem;
+}
+
+.wc-template-porto-restaurant .wc-menu-list__item-head {
+	display: flex;
+	justify-content: space-between;
+	gap: 1rem;
+}
+
+.wc-template-porto-restaurant .wc-menu-list__price {
+	font-weight: 700;
+	color: #444;
+}
+
+/* ── Press list ── */
+.wc-template-porto-restaurant .wc-porto-press-item {
+	display: flex;
+	gap: 1.5rem;
+	margin-bottom: 2.5rem;
+	align-items: flex-start;
+}
+
+.wc-template-porto-restaurant .wc-porto-press-item__media img {
+	width: 235px;
+	max-width: 100%;
+	height: auto;
+}
+
+.wc-template-porto-restaurant .wc-porto-press-item__meta {
+	font-size: 0.85rem;
+	color: #777;
+	margin-bottom: 0.75rem;
+}
+
+/* ── Contact layouts ── */
+.wc-template-porto-restaurant .wc-contact-porto__grid {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 2rem;
+	align-items: start;
+}
+
+.wc-template-porto-restaurant .wc-contact-porto__row {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 1.5rem;
+}
+
+.wc-template-porto-restaurant .wc-contact-porto__col--hours .wc-contact-porto__row {
+	grid-template-columns: 1fr;
+	gap: 1.75rem;
+}
+
+.wc-template-porto-restaurant .wc-contact-porto__label {
+	font-size: 0.95rem;
+	font-weight: 700;
+	margin: 1.25rem 0 0.5rem;
+	color: #212529;
+	text-transform: none;
+}
+
+.wc-template-porto-restaurant .wc-contact-porto__label:first-child,
+.wc-template-porto-restaurant .wc-contact-porto__block:first-child .wc-contact-porto__label {
+	margin-top: 0.5rem;
+}
+
+.wc-template-porto-restaurant .wc-contact-porto__label--form {
+	margin-top: 0.5rem;
+	margin-bottom: 1rem;
+}
+
+.wc-template-porto-restaurant .wc-contact-porto__line {
+	margin: 0 0 0.35rem;
+	color: #777;
+	font-size: 0.95rem;
+}
+
+.wc-template-porto-restaurant .wc-contact-porto__line i {
+	color: #777;
+	width: 1.1rem;
+	margin-right: 0.35rem;
+}
+
+.wc-template-porto-restaurant .wc-contact-porto__map {
+	margin-top: 1rem;
+}
+
+.wc-template-porto-restaurant .wc-contact-porto__map-embed,
+.wc-template-porto-restaurant .wc-contact-porto__map-placeholder {
+	display: block;
+	width: 100%;
+	max-width: 300px;
+	height: 200px;
+	border: 0;
+	background: #e9ecef;
+}
+
+.wc-template-porto-restaurant .wc-contact-porto__directions {
+	margin: 0.5rem 0 0;
+}
+
+.wc-template-porto-restaurant .wc-contact-porto__directions a {
+	color: var(--porto-primary);
+	text-decoration: none;
+	font-size: 0.9rem;
+}
+
+.wc-template-porto-restaurant .wc-contact-porto__hours-list {
+	list-style: none;
+	margin: 0.75rem 0 0;
+	padding: 0;
+	color: #555;
+	font-size: 0.92rem;
+}
+
+.wc-template-porto-restaurant .wc-contact-porto__hours-list li {
+	display: flex;
+	align-items: flex-start;
+	gap: 0.5rem;
+	margin-bottom: 0.45rem;
+}
+
+.wc-template-porto-restaurant .wc-contact-porto__hours-list i {
+	color: #777;
+	margin-top: 0.15rem;
+}
+
+.wc-template-porto-restaurant .wc-contact-porto__field {
+	margin-bottom: 1rem;
+}
+
+.wc-template-porto-restaurant .wc-contact-porto__field label {
+	display: block;
+	margin-bottom: 0.35rem;
+	font-size: 0.9rem;
+	color: #444;
+}
+
+.wc-template-porto-restaurant .wc-contact-porto__field input,
+.wc-template-porto-restaurant .wc-contact-porto__field textarea {
+	display: block;
+	width: 100%;
+	padding: 0.6rem 0.75rem;
+	border: 1px solid #ced4da;
+	border-radius: 4px;
+	font: inherit;
+	background: #fff;
+	color: #212529;
+}
+
+.wc-template-porto-restaurant .wc-contact-porto__field input:focus,
+.wc-template-porto-restaurant .wc-contact-porto__field textarea:focus {
+	border-color: var(--porto-primary);
+	outline: none;
+	box-shadow: 0 0 0 2px color-mix(in srgb, var(--porto-primary) 20%, transparent);
+}
+
+.wc-template-porto-restaurant .wc-contact-porto-about__details {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 0.5rem;
+	text-align: center;
+	padding-bottom: 1rem;
+}
+
+.wc-template-porto-restaurant .wc-contact-porto-about__block {
+	margin-bottom: 0.5rem;
+}
+
+.wc-template-porto-restaurant .wc-text-porto-about__inner {
+	padding-block: 2rem 2.5rem;
+	overflow: hidden;
+}
+
+.wc-template-porto-restaurant .wc-text-porto-about__float-image {
+	float: left;
+	width: 205px;
+	max-width: 38%;
+	height: auto;
+	margin: 0.25rem 1.5rem 1rem 0;
+}
+
+.wc-template-porto-restaurant .wc-text-porto-about__title {
+	font-size: 1.75rem;
+	font-weight: 600;
+	margin: 0 0 1rem;
+	color: #212529;
+}
+
+.wc-template-porto-restaurant .wc-text-porto-about__body .lead {
+	font-size: 1.15rem;
+	line-height: 1.7;
+	margin-bottom: 1.25rem;
+	color: #444;
+}
+
+.wc-template-porto-restaurant .wc-text-porto-about__body p {
+	line-height: 1.75;
+	color: #555;
+	margin-bottom: 1rem;
+}
+
+.wc-template-porto-restaurant .wc-porto-special--plain {
+	background-image: none !important;
+	padding-top: 1rem;
+}
+
+.wc-template-porto-restaurant .wc-menu-list--tabs {
+	padding-top: 0.5rem;
+}
+
+.wc-template-porto-restaurant .wc-porto-press {
+	padding-top: 1rem;
+	padding-bottom: 3rem;
+}
+
+.wc-template-porto-restaurant .wc-testimonials--porto .wc-testimonials__list--porto {
+	max-width: 42rem;
+	margin: 0 auto;
+}
+
+.wc-template-porto-restaurant .wc-testimonials--porto .wc-quote {
+	text-align: center;
+	border: none;
+	background: transparent;
+	box-shadow: none;
+}
+
+.wc-template-porto-restaurant .wc-testimonials--porto .wc-quote p {
+	font-style: italic;
+	font-size: 1.05rem;
+	line-height: 1.75;
+}
+
+.wc-template-porto-restaurant .wc-gallery--porto {
+	padding-top: 1rem;
+	padding-bottom: 2rem;
+}
+
+.wc-template-porto-restaurant .wc-gallery--porto .wc-gallery__grid {
+	display: grid;
+	grid-template-columns: repeat(4, minmax(0, 1fr));
+	gap: 0.625rem;
+}
+
+.wc-template-porto-restaurant .wc-gallery--porto .wc-gallery__item {
+	margin: 0;
+	border-radius: 0;
+	overflow: hidden;
+	background: transparent;
+}
+
+.wc-template-porto-restaurant .wc-gallery--porto .wc-gallery__item:nth-child(2) {
+	grid-column: span 2;
+}
+
+.wc-template-porto-restaurant .wc-gallery--porto .wc-gallery__item img {
+	width: 100%;
+	height: 14rem;
+	object-fit: cover;
+	filter: grayscale(15%);
+	transition: filter 0.35s ease, transform 0.35s ease;
+}
+
+.wc-template-porto-restaurant .wc-gallery--porto .wc-gallery__item:hover img {
+	filter: grayscale(0%);
+	transform: scale(1.02);
+}
+
+.wc-template-porto-restaurant .wc-gallery--porto .wc-gallery__item figcaption {
+	display: none;
+}
+
+.wc-template-porto-restaurant .wc-porto-thumb__caption .wc-btn {
+	margin-top: 0.75rem;
+}
+
+/* ── Porto appear animations (from theme-elements.css) ── */
+.wc-template-porto-restaurant [data-wc-appear]:not(.wc-porto-animated) {
+	opacity: 0;
+}
+
+.wc-template-porto-restaurant [data-wc-appear].wc-porto-animated {
+	animation-duration: 750ms;
+	animation-fill-mode: both;
+	animation-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+
+@keyframes fadeInDownShorterPlus {
+	from {
+		opacity: 0;
+		transform: translate3d(0, -15px, 0);
+	}
+	to {
+		opacity: 1;
+		transform: none;
+	}
+}
+
+@keyframes fadeInLeftShorter {
+	from {
+		opacity: 0;
+		transform: translate3d(50px, 0, 0);
+	}
+	to {
+		opacity: 1;
+		transform: none;
+	}
+}
+
+@keyframes fadeInUpShorter {
+	from {
+		opacity: 0;
+		transform: translate3d(0, 50px, 0);
+	}
+	to {
+		opacity: 1;
+		transform: none;
+	}
+}
+
+@keyframes blurIn {
+	from {
+		opacity: 0;
+		filter: blur(20px);
+		transform: scale(1.3);
+	}
+	to {
+		opacity: 1;
+		filter: blur(0);
+		transform: none;
+	}
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+.wc-template-porto-restaurant .wc-animate {
+	opacity: 1;
+	transform: none;
+	transition: none;
+}
+
+.wc-template-porto-restaurant .wc-hero-slide {
+	transition: opacity 1s ease-in-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.wc-template-porto-restaurant [data-wc-appear] {
+		opacity: 1 !important;
+		animation: none !important;
+	}
+}
+
+@media (max-width: 991px) {
+	.wc-template-porto-restaurant .wc-porto-blog-team__grid {
+		grid-template-columns: 1fr;
+	}
+
+	.wc-template-porto-restaurant .wc-porto-blog-team__inner,
+	.wc-template-porto-restaurant .wc-porto-blog-team__inner--right,
+	.wc-template-porto-restaurant .wc-porto-blog-team__inner--left {
+		margin: 0 auto;
+		max-width: 720px;
+	}
+
+	.wc-template-porto-restaurant .wc-porto-team-track {
+		grid-template-columns: 1fr;
+	}
+
+	.wc-template-porto-restaurant .wc-gallery--porto .wc-gallery__grid {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+
+	.wc-template-porto-restaurant .wc-gallery--porto .wc-gallery__item:nth-child(2) {
+		grid-column: span 1;
+	}
+
+	.wc-template-porto-restaurant .wc-menu-list__grid,
+	.wc-template-porto-restaurant .wc-contact-porto__grid {
+		grid-template-columns: 1fr;
+	}
+
+	.wc-template-porto-restaurant .wc-porto-press-item,
+	.wc-template-porto-restaurant .wc-porto-blog-item {
+		flex-direction: column;
+	}
+
+	.wc-template-porto-restaurant .wc-porto-press-item__media img,
+	.wc-template-porto-restaurant .wc-porto-blog-item__media {
+		width: 100%;
+		max-width: 120px;
+	}
+
+	.wc-template-porto-restaurant .wc-header--porto .wc-nav-toggle {
+		display: flex;
+	}
+
+	.wc-template-porto-restaurant .wc-header--porto .wc-nav {
+		display: none;
+		position: absolute;
+		top: 100%;
+		left: 0;
+		right: 0;
+		flex-direction: column;
+		background: #fff;
+		border-top: 1px solid #eee;
+		box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+	}
+
+	.wc-template-porto-restaurant .wc-header--porto.is-nav-open .wc-nav {
+		display: flex;
+	}
+
+	.wc-template-porto-restaurant .wc-porto-special__item h3,
+	.wc-template-porto-restaurant .wc-porto-special__item p {
+		padding-left: 0;
+		margin-left: 0;
+	}
+
+	.wc-template-porto-restaurant .wc-porto-special__item img {
+		float: none;
+		display: block;
+		margin: 0 auto 0.75rem;
+	}
+
+	.wc-template-porto-restaurant .wc-porto-special__price {
+		float: none;
+		display: block;
+		margin-top: 0.5rem;
+		text-align: right;
+	}
+}

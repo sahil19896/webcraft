@@ -46,6 +46,9 @@ def get_theme_variables(theme_name: str | None) -> dict[str, Any]:
 		value = theme.get(key)
 		if value not in (None, ""):
 			defaults[key] = value
+	# custom_css may be intentionally empty string — always read from doc
+	if theme.get("custom_css") is not None:
+		defaults["custom_css"] = theme.custom_css or ""
 	return defaults
 
 
@@ -145,12 +148,17 @@ def get_page_context(page, project: dict | None = None) -> dict[str, Any]:
 		"og_image": page.og_image or "",
 		"canonical_url": page.canonical_url or "",
 		"site_brand": _site_brand(theme_name),
+		"animations_enabled": theme.get("animations_enabled", True),
 	}
 	ctx.update(commerce_context_flags(project, page))
+	template_key = (project or {}).get("website_template")
+	from webcraft.website_builder.template_render import get_template_render_extras
+
+	ctx.update(get_template_render_extras(template_key))
+	ctx["active_nav_url"] = _active_nav_url(prefix, page, project)
 	ctx["no_header"] = 1
 	ctx["show_sidebar"] = 0
 	ctx["full_width"] = 1
-	ctx["body_class"] = "wc-body"
 
 	from webcraft.website_builder.content.edit_map import build_page_edit_config, is_wc_edit_mode
 
@@ -159,6 +167,16 @@ def get_page_context(page, project: dict | None = None) -> dict[str, Any]:
 		ctx["wc_edit_config"] = build_page_edit_config(page)
 
 	return ctx
+
+
+def _active_nav_url(route_prefix: str, page, project: dict | None) -> str:
+	route = (getattr(page, "route", None) or "").strip("/")
+	base = f"/{route_prefix}"
+	if not route or route == route_prefix:
+		return base
+	if route.startswith(f"{route_prefix}/"):
+		return f"/{route}"
+	return f"{base}/{route.split('/')[-1]}"
 
 
 def build_theme_css(theme: dict[str, Any]) -> str:

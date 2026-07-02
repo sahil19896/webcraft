@@ -171,6 +171,43 @@ COMPONENTS: dict[str, dict] = {
 			"images": [],
 		},
 	},
+	"page_banner": {
+		"label": "Page Banner",
+		"category": "Layout",
+		"icon": "layout",
+		"defaults": {
+			"title": "Page title",
+			"subtitle": "",
+			"background_image": "",
+		},
+	},
+	"menu_list": {
+		"label": "Menu List",
+		"category": "Content",
+		"icon": "list",
+		"defaults": {
+			"title": "Our Menu",
+			"subtitle": "",
+			"categories": [
+				{
+					"name": "Starters",
+					"items": [
+						{"name": "House Salad", "description": "Fresh greens with vinaigrette", "price": "$9"},
+						{"name": "Soup of the Day", "description": "Chef's daily selection", "price": "$8"},
+					],
+				}
+			],
+		},
+	},
+	"porto_blog_team": {
+		"label": "Blog & Team",
+		"category": "Content",
+		"icon": "users",
+		"defaults": {
+			"blog": {"title": "Our Blog", "subtitle": "", "posts": []},
+			"team": {"title": "Our Team", "subtitle": "", "members": []},
+		},
+	},
 	"text": {
 		"label": "Text Block",
 		"category": "Content",

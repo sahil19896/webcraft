@@ -1,0 +1,61 @@
+<section class="wc-section wc-section--porto-default wc-menu-list{% if content.tabs %} wc-menu-list--tabs{% endif %}" data-wc-section="menu_list"{% if section_id %} data-wc-section-id="{{ section_id }}"{% endif %}{% if content.background_image %} style="background-image:url('{{ content.background_image }}');background-repeat:no-repeat;background-position:center bottom"{% endif %}>
+	<div class="wc-container">
+		{% if content.title or content.subtitle %}
+		<div class="wc-porto-head">
+			{% if content.title %}<h2>{{ content.title | safe }}</h2>{% endif %}
+			{% if content.subtitle %}<p>{{ content.subtitle }}</p>{% endif %}
+			{% if content.show_divider %}<hr class="wc-porto-divider">{% endif %}
+		</div>
+		{% endif %}
+
+		{% if content.tabs %}
+		<div class="wc-menu-list__tabs" data-wc-menu-tabs>
+			<div class="wc-menu-list__tab-nav" role="tablist">
+				{% for tab in content.tabs %}
+				<button type="button" class="wc-menu-list__tab-btn{% if loop.first %} is-active{% endif %}" role="tab" data-wc-menu-tab="{{ loop.index0 }}" aria-selected="{{ 'true' if loop.first else 'false' }}">{{ tab.name }}</button>
+				{% endfor %}
+			</div>
+			{% for tab in content.tabs %}
+			<div class="wc-menu-list__tab-panel{% if loop.first %} is-active{% endif %}" data-wc-menu-panel="{{ loop.index0 }}" role="tabpanel">
+				{% for category in tab.categories or [] %}
+				<div class="wc-menu-list__category">
+					<h3 class="wc-menu-list__category-title">{{ category.name }}</h3>
+					<div class="wc-menu-list__grid">
+						{% for item in category.get('items') or [] %}
+						<article class="wc-menu-list__item">
+							<div class="wc-menu-list__item-head">
+								<h4>{{ item.name }}</h4>
+								{% if item.price %}<span class="wc-menu-list__price">{{ item.price }}</span>{% endif %}
+							</div>
+							{% if item.description %}<p>{{ item.description }}</p>{% endif %}
+						</article>
+						{% endfor %}
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+			{% endfor %}
+		</div>
+		{% else %}
+		{% for category in content.categories or [] %}
+		<div class="wc-menu-list__category">
+			<h3 class="wc-menu-list__category-title">{{ category.name }}</h3>
+			<div class="wc-menu-list__grid">
+				{% for item in category.get('items') or [] %}
+				<article class="wc-menu-list__item{% if item.image %} wc-menu-list__item--photo{% endif %}">
+					{% if item.image %}
+					<img class="wc-menu-list__thumb" src="{{ item.image }}" alt="{{ item.name or '' }}" loading="lazy">
+					{% endif %}
+					<div class="wc-menu-list__item-head">
+						<h4>{{ item.name }}</h4>
+						{% if item.price %}<span class="wc-menu-list__price">{{ item.price }}</span>{% endif %}
+					</div>
+					{% if item.description %}<p>{{ item.description }}</p>{% endif %}
+				</article>
+				{% endfor %}
+			</div>
+		</div>
+		{% endfor %}
+		{% endif %}
+	</div>
+</section>

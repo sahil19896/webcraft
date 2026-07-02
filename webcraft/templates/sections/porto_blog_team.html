@@ -1,0 +1,67 @@
+<section class="wc-porto-blog-team" data-wc-section="porto_blog_team"{% if section_id %} data-wc-section-id="{{ section_id }}"{% endif %}>
+	<div class="wc-porto-blog-team__grid">
+		<div class="wc-porto-blog-team__col wc-porto-blog-team__col--blog">
+			<div class="wc-porto-blog-team__inner wc-porto-blog-team__inner--right">
+				<div class="wc-porto-head wc-porto-head--dark" data-wc-appear="fadeInUpShorter">
+					{% if content.blog.title %}<h2>{{ content.blog.title | safe }}</h2>{% endif %}
+					{% if content.blog.subtitle %}<p>{{ content.blog.subtitle }}</p>{% endif %}
+					{% if content.blog.show_divider %}<hr class="wc-porto-divider">{% endif %}
+				</div>
+				<div class="wc-porto-blog-list" data-wc-porto-carousel="blog">
+					<div class="wc-porto-carousel__track">
+						{% for post in content.blog.posts or [] %}
+						<article class="wc-porto-blog-item" data-wc-appear="fadeInUpShorter" data-wc-appear-delay="{{ loop.index0 * 150 }}">
+							{% if post.image %}
+							<a class="wc-porto-blog-item__media" href="{{ post.url or '#' }}">
+								<img src="{{ post.image }}" alt="{{ post.title or '' }}" loading="lazy">
+							</a>
+							{% endif %}
+							<div class="wc-porto-blog-item__body">
+								<h3><a href="{{ post.url or '#' }}">{{ post.title }}</a></h3>
+								{% if post.excerpt %}<p>{{ post.excerpt }}</p>{% endif %}
+								{% if post.button_label %}
+								<a class="wc-porto-blog-item__link" href="{{ post.url or '#' }}">{{ post.button_label }} →</a>
+								{% endif %}
+							</div>
+						</article>
+						{% endfor %}
+					</div>
+					<div class="wc-porto-carousel__nav" aria-hidden="true">
+						<button type="button" class="wc-porto-carousel__btn wc-porto-carousel__btn--prev" aria-label="Previous">‹</button>
+						<button type="button" class="wc-porto-carousel__btn wc-porto-carousel__btn--next" aria-label="Next">›</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="wc-porto-blog-team__col wc-porto-blog-team__col--team">
+			<div class="wc-porto-blog-team__inner wc-porto-blog-team__inner--left">
+				<div class="wc-porto-head wc-porto-head--dark" data-wc-appear="fadeInUpShorter">
+					{% if content.team.title %}<h2>{{ content.team.title | safe }}</h2>{% endif %}
+					{% if content.team.subtitle %}<p>{{ content.team.subtitle }}</p>{% endif %}
+					{% if content.team.show_divider %}<hr class="wc-porto-divider">{% endif %}
+				</div>
+				<div class="wc-porto-team-list" data-wc-porto-carousel="team">
+					<div class="wc-porto-carousel__track wc-porto-team-track">
+						{% for member in content.team.members or [] %}
+						<article class="wc-porto-team-card" data-wc-appear="fadeIn" data-wc-appear-delay="{{ loop.index0 * 200 }}">
+							{% if member.photo %}
+							<div class="wc-porto-team-card__photo">
+								<img src="{{ member.photo }}" alt="{{ member.name or '' }}" loading="lazy">
+							</div>
+							{% endif %}
+							<div class="wc-porto-team-card__caption">
+								<h3>{{ member.name }}</h3>
+								{% if member.role %}<p>{{ member.role }}</p>{% endif %}
+							</div>
+						</article>
+						{% endfor %}
+					</div>
+					<div class="wc-porto-carousel__nav" aria-hidden="true">
+						<button type="button" class="wc-porto-carousel__btn wc-porto-carousel__btn--prev" aria-label="Previous">‹</button>
+						<button type="button" class="wc-porto-carousel__btn wc-porto-carousel__btn--next" aria-label="Next">›</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

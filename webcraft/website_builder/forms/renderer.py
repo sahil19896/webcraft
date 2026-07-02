@@ -59,6 +59,11 @@ def render_form_html(form_name: str) -> str:
 	if not form_doc or not form_doc.published:
 		return ""
 
+	from webcraft.website_builder.access import is_project_live
+
+	if form_doc.website_project and not is_project_live(form_doc.website_project):
+		return ""
+
 	settings = form_doc.form_settings or {}
 	if isinstance(settings, str):
 		import json

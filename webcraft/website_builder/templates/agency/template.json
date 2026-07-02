@@ -1,0 +1,157 @@
+{
+	"key": "agency",
+	"title": "Studio Agency",
+	"description": "Creative agency template with bold typography, portfolio-style sections, team grid, and contact form.",
+	"category": "Agency",
+	"version": "1.0.0",
+	"preview_image": "https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=800&q=80",
+	"features": ["Bold hero", "Services grid", "Team section", "Contact form"],
+	"route_prefix": "agency",
+	"theme": {
+		"theme_name": "Studio Agency",
+		"primary_color": "#0f172a",
+		"secondary_color": "#334155",
+		"accent_color": "#f97316",
+		"background_color": "#fafafa",
+		"text_color": "#0f172a",
+		"surface_color": "#ffffff",
+		"font_family": "Inter, system-ui, sans-serif",
+		"heading_font": "Inter, system-ui, sans-serif",
+		"border_radius": 8,
+		"animations_enabled": 1,
+		"custom_css": ".wc-header { background: rgba(250,250,250,0.92); backdrop-filter: blur(12px); } .wc-hero { background: linear-gradient(135deg, #fff7ed 0%, #fafafa 45%); } .wc-hero__title { letter-spacing: -0.04em; } .wc-btn--primary { background: var(--wc-primary); color: #fff; } .wc-section__head h2 { letter-spacing: -0.03em; } .wc-card--feature { border-left: 3px solid var(--wc-accent); }"
+	},
+	"pages": [
+		{
+			"title": "Home",
+			"slug": "",
+			"is_homepage": true,
+			"seo": {
+				"title": "Studio Agency — Creative digital studio",
+				"description": "We design brands, websites, and campaigns that get noticed."
+			},
+			"sections": [
+				{
+					"type": "header",
+					"content": {
+						"logo_text": "Studio",
+						"cta_label": "Start a project",
+						"cta_url": "/agency/contact"
+					}
+				},
+				{
+					"type": "hero",
+					"content": {
+						"eyebrow": "Creative digital studio",
+						"title": "We craft brands people remember",
+						"subtitle": "Strategy, design, and development for ambitious teams.",
+						"button_label": "View our work",
+						"button_url": "/agency/work",
+						"secondary_button_label": "Get in touch",
+						"secondary_button_url": "/agency/contact",
+						"alignment": "left"
+					}
+				},
+				{
+					"type": "features",
+					"content": {
+						"title": "What we do",
+						"subtitle": "End-to-end creative services",
+						"items": [
+							{"title": "Brand identity", "description": "Logos, guidelines, and visual systems.", "icon": "◆"},
+							{"title": "Web design", "description": "Marketing sites and product UI.", "icon": "◇"},
+							{"title": "Content & campaigns", "description": "Launch campaigns that convert.", "icon": "◎"}
+						]
+					}
+				},
+				{
+					"type": "testimonials",
+					"content": {
+						"title": "Client stories",
+						"items": [
+							{
+								"quote": "They turned our rebrand into our best quarter ever.",
+								"author": "Alex Rivera",
+								"role": "CMO, Northwind"
+							}
+						]
+					}
+				},
+				{
+					"type": "cta",
+					"content": {
+						"title": "Have a project in mind?",
+						"subtitle": "Tell us about your goals — we'll reply within one business day.",
+						"button_label": "Contact us",
+						"button_url": "/agency/contact"
+					}
+				},
+				{
+					"type": "footer",
+					"content": {
+						"logo_text": "Studio",
+						"copyright": "© 2026 Studio Agency. All rights reserved."
+					}
+				}
+			]
+		},
+		{
+			"title": "Work",
+			"slug": "work",
+			"seo": {"title": "Work | Studio Agency", "description": "Selected projects and case studies."},
+			"sections": [
+				{"type": "header", "content": {"logo_text": "Studio", "cta_label": "Contact", "cta_url": "/agency/contact"}},
+				{
+					"type": "hero",
+					"content": {
+						"title": "Selected work",
+						"subtitle": "A few projects we're proud of.",
+						"alignment": "center"
+					}
+				},
+				{
+					"type": "features",
+					"content": {
+						"title": "Case studies",
+						"items": [
+							{"title": "Northwind rebrand", "description": "Full identity refresh + marketing site.", "icon": "◈"},
+							{"title": "Brightline app", "description": "Product design for a fintech launch.", "icon": "◉"},
+							{"title": "Summit campaign", "description": "Multi-channel campaign for a SaaS launch.", "icon": "◆"}
+						]
+					}
+				},
+				{"type": "footer", "content": {"logo_text": "Studio"}}
+			]
+		},
+		{
+			"title": "Contact",
+			"slug": "contact",
+			"sections": [
+				{"type": "header", "content": {"logo_text": "Studio"}},
+				{
+					"type": "contact",
+					"content": {
+						"title": "Let's talk",
+						"subtitle": "Share a few details and we'll get back to you.",
+						"email": "hello@studio.example.com",
+						"phone": "+1 (555) 010-3000",
+						"address": "42 Creative Lane, Austin, TX"
+					}
+				},
+				{"type": "footer", "content": {"logo_text": "Studio"}}
+			]
+		}
+	],
+	"menus": [
+		{
+			"name": "Main Navigation",
+			"location": "Header",
+			"items": [
+				{"label": "Home", "page": "Home", "url": "/agency"},
+				{"label": "Work", "page": "Work", "url": "/agency/work"},
+				{"label": "Contact", "page": "Contact", "url": "/agency/contact"}
+			]
+		}
+	],
+	"assets": []
+}

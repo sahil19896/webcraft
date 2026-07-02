@@ -4,10 +4,14 @@
 		<div class="wc-grid wc-grid--2">
 			{% for member in content.members or [] %}
 			<article class="wc-card wc-card--team">
+				{% if member.photo %}
+				<img class="wc-team__photo" src="{{ member.photo }}" alt="{{ member.name or '' }}" loading="lazy">
+				{% else %}
 				<div class="wc-avatar">{{ (member.name or '?')[0] }}</div>
+				{% endif %}
 				<h3>{{ member.name }}</h3>
 				<p class="wc-muted">{{ member.role }}</p>
-				<p>{{ member.bio }}</p>
+				{% if member.bio %}<p>{{ member.bio }}</p>{% endif %}
 			</article>
 			{% endfor %}
 		</div>

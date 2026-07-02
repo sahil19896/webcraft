@@ -19,9 +19,6 @@ from webcraft.website_builder.installer import get_templates_root, load_template
 
 
 def list_bundled_designs() -> list[dict]:
-	from webcraft.website_builder.installer import sync_template_records
-
-	sync_template_records()
 	designs = []
 	root = get_templates_root()
 	if not root.exists():
@@ -190,8 +187,17 @@ def get_preview_context(template_key: str, page_slug: str | None = None) -> dict
 		"no_header": 1,
 		"show_sidebar": 0,
 		"full_width": 1,
-		"body_class": "wc-body",
+		"animations_enabled": theme.get("animations_enabled", True),
+		**_preview_nav_extras(template_key, page_slug, manifest),
 	}
+
+
+def _preview_nav_extras(template_key: str, page_slug: str | None, manifest: dict) -> dict:
+	from webcraft.website_builder.template_render import get_template_render_extras
+
+	base = f"/webcraft-preview/{template_key}"
+	active = f"{base}/{page_slug}" if page_slug else base
+	return {**get_template_render_extras(template_key), "active_nav_url": active}
 
 
 def _find_page_def(manifest: dict, page_slug: str | None) -> dict | None:

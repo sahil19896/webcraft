@@ -1,0 +1,959 @@
+{
+	"key": "porto-restaurant",
+	"title": "Porto Restaurant",
+	"description": "Warm restaurant template imported from Porto — food menu, gallery, team, and reservations.",
+	"category": "Restaurant",
+	"version": "1.0.0",
+	"route_prefix": "restaurant",
+	"preview_image": "/assets/webcraft/files/porto-restaurant/slides/slide-restaurant-1.jpg",
+	"features": [
+		"Hero",
+		"Menu",
+		"Gallery",
+		"Team",
+		"Testimonials",
+		"Contact"
+	],
+	"porto": {
+		"demo": "restaurant",
+		"source": "themeforest-E1JFLFmv-porto-responsive-html5-template"
+	},
+	"theme": {
+		"theme_name": "Porto Restaurant",
+		"primary_color": "#e09b23",
+		"secondary_color": "#344257",
+		"accent_color": "#D1E7E7",
+		"background_color": "#ffffff",
+		"text_color": "#212529",
+		"surface_color": "#fafafa",
+		"font_family": "\"Open Sans\", Arial, sans-serif",
+		"heading_font": "\"Open Sans\", Arial, sans-serif",
+		"border_radius": 4,
+		"animations_enabled": 1,
+		"template_stylesheet": "/assets/webcraft/css/templates/porto-restaurant.css",
+		"template_script": "/assets/webcraft/js/porto-restaurant.js",
+		"google_fonts_url": "https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&family=Shadows+Into+Light&display=swap",
+		"icon_stylesheet": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css",
+		"custom_css": ""
+	},
+	"pages": [
+		{
+			"title": "Home",
+			"slug": "",
+			"is_homepage": true,
+			"seo": {
+				"title": "The Porto Restaurant",
+				"description": "The best place to eat in downtown Porto."
+			},
+			"sections": [
+				{
+					"type": "header",
+					"content": {
+						"layout": "porto",
+						"logo_text": "The Porto",
+						"logo_image": "/assets/webcraft/files/porto-restaurant/logo-restaurant.png",
+						"top_bar_text": "The best place to eat in downtown Porto!",
+						"phone": "123-456-7890"
+					}
+				},
+				{
+					"type": "hero",
+					"content": {
+						"layout": "slider",
+						"slides": [
+							{
+								"eyebrow": "WELCOME TO",
+								"title": "THE PORTO",
+								"subtitle": "The best place to eat in downtown Porto!",
+								"button_label": "Our Menu",
+								"button_url": "/restaurant/menu",
+								"image": "/assets/webcraft/files/porto-restaurant/slides/slide-restaurant-1.jpg",
+								"title_border_image": "/assets/webcraft/files/porto-restaurant/slide-title-border.png"
+							},
+							{
+								"eyebrow": "Best ingredients, fresh prepared!",
+								"title": "DELICIOUS!!!",
+								"subtitle": "The best place to eat in downtown Porto!",
+								"image": "/assets/webcraft/files/porto-restaurant/slides/slide-restaurant-2.jpg",
+								"title_border_image": "/assets/webcraft/files/porto-restaurant/slide-title-border.png"
+							}
+						]
+					}
+				},
+				{
+					"type": "features",
+					"content": {
+						"layout": "porto-thumb",
+						"title": "Enjoy <strong>Your Meal</strong>",
+						"subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu pulvinar magna.<br>Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
+						"show_divider": true,
+						"items": [
+							{
+								"title": "Sweets",
+								"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu pulvinar magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
+								"icon": "/assets/webcraft/files/porto-restaurant/icons/restaurant-icon-1.png",
+								"image": "/assets/webcraft/files/porto-restaurant/blog/blog-restaurant-1.png",
+								"button_label": "View More",
+								"button_url": "/restaurant/menu"
+							},
+							{
+								"title": "Coffee & Beer",
+								"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu pulvinar magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
+								"icon": "/assets/webcraft/files/porto-restaurant/icons/restaurant-icon-2.png",
+								"image": "/assets/webcraft/files/porto-restaurant/blog/blog-restaurant-2.png",
+								"button_label": "View More",
+								"button_url": "/restaurant/menu"
+							},
+							{
+								"title": "Cake & Cookies",
+								"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu pulvinar magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
+								"icon": "/assets/webcraft/files/porto-restaurant/icons/restaurant-icon-3.png",
+								"image": "/assets/webcraft/files/porto-restaurant/blog/blog-restaurant-3.png",
+								"button_label": "View More",
+								"button_url": "/restaurant/menu"
+							}
+						]
+					}
+				},
+				{
+					"type": "testimonials",
+					"content": {
+						"layout": "porto",
+						"show_divider": true,
+						"background_image": "/assets/webcraft/files/porto-restaurant/parallax-restaurant.jpg",
+						"items": [
+							{
+								"quote": "The best place in town! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget risus porta, tincidunt turpis at, interdum tortor. Suspendisse potenti. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce ante tellus, convallis non consectetur sed, pharetra nec ex.",
+								"author": "John Smith",
+								"role": "Porto Magazine"
+							},
+							{
+								"quote": "Best place to eat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget risus porta, tincidunt turpis at, interdum tortor. Suspendisse potenti. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+								"author": "John Smith",
+								"role": "Porto Magazine"
+							}
+						]
+					}
+				},
+				{
+					"type": "gallery",
+					"content": {
+						"layout": "porto",
+						"title": "Our <strong>Gallery</strong>",
+						"subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu pulvinar magna.<br>Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
+						"show_divider": true,
+						"images": [
+							{
+								"url": "/assets/webcraft/files/porto-restaurant/gallery/restaurant-gallery-1.jpg"
+							},
+							{
+								"url": "/assets/webcraft/files/porto-restaurant/gallery/restaurant-gallery-2.jpg"
+							},
+							{
+								"url": "/assets/webcraft/files/porto-restaurant/gallery/restaurant-gallery-4.jpg"
+							},
+							{
+								"url": "/assets/webcraft/files/porto-restaurant/gallery/restaurant-gallery-3.jpg"
+							},
+							{
+								"url": "/assets/webcraft/files/porto-restaurant/gallery/restaurant-gallery-5.jpg"
+							}
+						]
+					}
+				},
+				{
+					"type": "porto_blog_team",
+					"content": {
+						"blog": {
+							"title": "Our <strong>Blog</strong>",
+							"subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
+							"show_divider": true,
+							"posts": [
+								{
+									"title": "Lorem ipsum dolor sit",
+									"excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu pulvinar magna. Lorem ipsum dolor...",
+									"image": "/assets/webcraft/files/porto-restaurant/blog/blog-restaurant-4.jpg",
+									"button_label": "Read More",
+									"url": "/restaurant/press"
+								},
+								{
+									"title": "Lorem ipsum dolor sit",
+									"excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu pulvinar magna. Lorem ipsum dolor...",
+									"image": "/assets/webcraft/files/porto-restaurant/blog/blog-restaurant-5.jpg",
+									"button_label": "Read More",
+									"url": "/restaurant/press"
+								},
+								{
+									"title": "Lorem ipsum dolor sit",
+									"excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu pulvinar magna. Lorem ipsum dolor...",
+									"image": "/assets/webcraft/files/porto-restaurant/blog/blog-restaurant-6.jpg",
+									"button_label": "Read More",
+									"url": "/restaurant/press"
+								}
+							]
+						},
+						"team": {
+							"title": "Our <strong>Team</strong>",
+							"subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
+							"show_divider": true,
+							"members": [
+								{
+									"name": "Jessica Doe",
+									"role": "Chef",
+									"photo": "/assets/webcraft/files/porto-restaurant/team-26.jpg"
+								},
+								{
+									"name": "John Doe",
+									"role": "Chef",
+									"photo": "/assets/webcraft/files/porto-restaurant/team-27.jpg"
+								},
+								{
+									"name": "Angelina Doe",
+									"role": "Chef",
+									"photo": "/assets/webcraft/files/porto-restaurant/team-28.jpg"
+								}
+							]
+						}
+					}
+				},
+				{
+					"type": "features",
+					"content": {
+						"layout": "porto-special-menu",
+						"title": "Special <strong>Menu</strong>",
+						"subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu pulvinar magna.<br>Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
+						"show_divider": true,
+						"background_image": "/assets/webcraft/files/porto-restaurant/background-restaurant.png",
+						"button_label": "Full Menu",
+						"button_url": "/restaurant/menu",
+						"items": [
+							{
+								"title": "Monday <em>Special</em>",
+								"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu pulvinar magna.",
+								"image": "/assets/webcraft/files/porto-restaurant/products/product-1.jpg",
+								"icon": "$29"
+							},
+							{
+								"title": "Tuesday <em>Special</em>",
+								"description": "Lorem ipsum dolor sit amet. Donec eu pulvinar magna.",
+								"image": "/assets/webcraft/files/porto-restaurant/products/product-2.jpg",
+								"icon": "$39"
+							},
+							{
+								"title": "Wednesday <em>Special</em>",
+								"description": "Lorem ipsum dolor sit amet.",
+								"image": "/assets/webcraft/files/porto-restaurant/products/product-3.jpg",
+								"icon": "$24"
+							},
+							{
+								"title": "Thursday <em>Special</em>",
+								"description": "Lorem ipsum dolor sit amet magna.",
+								"image": "/assets/webcraft/files/porto-restaurant/products/product-4.jpg",
+								"icon": "$39"
+							},
+							{
+								"title": "Friday <em>Special</em>",
+								"description": "Lorem ipsum dolor sit amet adipiscing elit. Donec eu pulvinar magna.",
+								"image": "/assets/webcraft/files/porto-restaurant/products/product-5.jpg",
+								"icon": "$59"
+							}
+						]
+					}
+				},
+				{
+					"type": "footer",
+					"content": {
+						"layout": "porto",
+						"address": "1234 Street Name, City Name",
+						"phone": "(800) 123-4567",
+						"email": "mail@example.com",
+						"copyright": "© Copyright 2020. All Rights Reserved.",
+						"social_links": [
+							{
+								"platform": "facebook",
+								"url": "http://www.facebook.com/"
+							},
+							{
+								"platform": "twitter",
+								"url": "http://www.twitter.com/"
+							},
+							{
+								"platform": "linkedin",
+								"url": "http://www.linkedin.com/"
+							}
+						]
+					}
+				}
+			]
+		},
+		{
+			"title": "Menu",
+			"slug": "menu",
+			"seo": {
+				"title": "Menu | The Porto",
+				"description": "Food and drink menu."
+			},
+			"sections": [
+				{
+					"type": "header",
+					"content": {
+						"layout": "porto",
+						"logo_text": "The Porto",
+						"logo_image": "/assets/webcraft/files/porto-restaurant/logo-restaurant.png",
+						"top_bar_text": "The best place to eat in downtown Porto!",
+						"phone": "123-456-7890"
+					}
+				},
+				{
+					"type": "page_banner",
+					"content": {
+						"layout": "simple",
+						"title": "Food <strong>&amp; </strong> Drink",
+						"subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu pulvinar magna.<br>Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
+						"show_divider": true
+					}
+				},
+				{
+					"type": "menu_list",
+					"content": {
+						"tabs": [
+							{
+								"name": "Lunch",
+								"categories": [
+									{
+										"name": "STARTERS",
+										"items": [
+											{
+												"name": "Consectetur Adipiscing",
+												"description": "Lorem, ipsum sit, amet.",
+												"price": "$9"
+											},
+											{
+												"name": "Adipiscing",
+												"description": "Lorem, dolor sit, amet.",
+												"price": "$10"
+											},
+											{
+												"name": "Pulvinar Magna",
+												"description": "Lorem, ipsum, dolor sit.",
+												"price": "$12"
+											}
+										]
+									},
+									{
+										"name": "APPETIZERS",
+										"items": [
+											{
+												"name": "Feugiat Nibh",
+												"description": "Lorem, ipsum, dolor sit, amet.",
+												"price": "$8"
+											},
+											{
+												"name": "Feugiat",
+												"description": "Lorem, ipsum, dolor sit, amet.",
+												"price": "$9"
+											},
+											{
+												"name": "Nibh",
+												"description": "Lorem, ipsum, dolor sit, amet.",
+												"price": "$12"
+											}
+										]
+									},
+									{
+										"name": "MAINS",
+										"items": [
+											{
+												"name": "Vestibulum",
+												"description": "Ipsum, dolor sit, amet.",
+												"price": "$18"
+											},
+											{
+												"name": "Curabitur Pellentesque",
+												"description": "Lorem, ipsum sit, amet.",
+												"price": "$20"
+											},
+											{
+												"name": "Pellentesque",
+												"description": "Lorem, dolor sit, amet.",
+												"price": "$23"
+											}
+										]
+									},
+									{
+										"name": "DESSERT",
+										"items": [
+											{
+												"name": "Sit Folor",
+												"description": "Folor sit, amet.",
+												"price": "$9"
+											},
+											{
+												"name": "Color",
+												"description": "Color sit, amet.",
+												"price": "$10"
+											},
+											{
+												"name": "Light Amet",
+												"description": "Amet.",
+												"price": "$12"
+											}
+										]
+									}
+								]
+							},
+							{
+								"name": "Dinner",
+								"categories": [
+									{
+										"name": "STARTERS",
+										"items": [
+											{
+												"name": "Lorem Ipsum",
+												"description": "Lorem, ipsum, dolor sit, amet.",
+												"price": "$5"
+											},
+											{
+												"name": "Dolor Sit",
+												"description": "Lorem, ipsum, dolor sit.",
+												"price": "$7"
+											},
+											{
+												"name": "Amet",
+												"description": "Lorem, ipsum sit, amet.",
+												"price": "$8"
+											},
+											{
+												"name": "Consectetur Adipiscing",
+												"description": "Lorem, ipsum sit, amet.",
+												"price": "$9"
+											},
+											{
+												"name": "Adipiscing",
+												"description": "Lorem, dolor sit, amet.",
+												"price": "$10"
+											},
+											{
+												"name": "Pulvinar Magna",
+												"description": "Lorem, ipsum, dolor sit.",
+												"price": "$12"
+											}
+										]
+									},
+									{
+										"name": "APPETIZERS",
+										"items": [
+											{
+												"name": "Feugiat Nibh",
+												"description": "Lorem, ipsum, dolor sit, amet.",
+												"price": "$8"
+											},
+											{
+												"name": "Feugiat",
+												"description": "Lorem, ipsum, dolor sit, amet.",
+												"price": "$9"
+											},
+											{
+												"name": "Nibh",
+												"description": "Lorem, ipsum, dolor sit, amet.",
+												"price": "$12"
+											}
+										]
+									},
+									{
+										"name": "ENTREES",
+										"items": [
+											{
+												"name": "Vestibulum",
+												"description": "Ipsum, dolor sit, amet.",
+												"price": "$18"
+											},
+											{
+												"name": "Curabitur Pellentesque",
+												"description": "Lorem, ipsum sit, amet.",
+												"price": "$20"
+											},
+											{
+												"name": "Pellentesque",
+												"description": "Lorem, dolor sit, amet.",
+												"price": "$23"
+											}
+										]
+									},
+									{
+										"name": "DESSERT",
+										"items": [
+											{
+												"name": "Sit Folor",
+												"description": "Folor sit, amet.",
+												"price": "$9"
+											},
+											{
+												"name": "Color",
+												"description": "Color sit, amet.",
+												"price": "$10"
+											},
+											{
+												"name": "Light Amet",
+												"description": "Amet.",
+												"price": "$12"
+											}
+										]
+									}
+								]
+							},
+							{
+								"name": "Drinks",
+								"categories": [
+									{
+										"name": "COCKTAILS",
+										"items": [
+											{
+												"name": "Consectetur Adipiscing",
+												"description": "Lorem, ipsum sit, amet.",
+												"price": "$9"
+											},
+											{
+												"name": "Adipiscing",
+												"description": "Lorem, dolor sit, amet.",
+												"price": "$10"
+											},
+											{
+												"name": "Pulvinar Magna",
+												"description": "Lorem, ipsum, dolor sit.",
+												"price": "$12"
+											}
+										]
+									},
+									{
+										"name": "BEER",
+										"items": [
+											{
+												"name": "Feugiat Nibh",
+												"description": "Lorem, ipsum, dolor sit, amet.",
+												"price": "$8"
+											},
+											{
+												"name": "Feugiat",
+												"description": "Lorem, ipsum, dolor sit, amet.",
+												"price": "$9"
+											},
+											{
+												"name": "Nibh",
+												"description": "Lorem, ipsum, dolor sit, amet.",
+												"price": "$12"
+											}
+										]
+									},
+									{
+										"name": "WINE",
+										"items": [
+											{
+												"name": "Feugiat Nibh",
+												"description": "Lorem, ipsum, dolor sit, amet.",
+												"price": "$8"
+											},
+											{
+												"name": "Feugiat",
+												"description": "Lorem, ipsum, dolor sit, amet.",
+												"price": "$9"
+											},
+											{
+												"name": "Nibh",
+												"description": "Lorem, ipsum, dolor sit, amet.",
+												"price": "$12"
+											}
+										]
+									}
+								]
+							}
+						]
+					}
+				},
+				{
+					"type": "features",
+					"content": {
+						"layout": "porto-special-menu",
+						"title": "Special <strong>Menu</strong>",
+						"subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu pulvinar magna.<br>Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
+						"show_divider": true,
+						"items": [
+							{
+								"title": "Monday <em>Special</em>",
+								"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu pulvinar magna.",
+								"image": "/assets/webcraft/files/porto-restaurant/products/product-1.jpg",
+								"icon": "$29"
+							},
+							{
+								"title": "Tuesday <em>Special</em>",
+								"description": "Lorem ipsum dolor sit amet. Donec eu pulvinar magna.",
+								"image": "/assets/webcraft/files/porto-restaurant/products/product-2.jpg",
+								"icon": "$39"
+							},
+							{
+								"title": "Wednesday <em>Special</em>",
+								"description": "Lorem ipsum dolor sit amet.",
+								"image": "/assets/webcraft/files/porto-restaurant/products/product-3.jpg",
+								"icon": "$24"
+							},
+							{
+								"title": "Thursday <em>Special</em>",
+								"description": "Lorem ipsum dolor sit amet magna.",
+								"image": "/assets/webcraft/files/porto-restaurant/products/product-4.jpg",
+								"icon": "$39"
+							},
+							{
+								"title": "Friday <em>Special</em>",
+								"description": "Lorem ipsum dolor sit amet adipiscing elit. Donec eu pulvinar magna.",
+								"image": "/assets/webcraft/files/porto-restaurant/products/product-5.jpg",
+								"icon": "$59"
+							}
+						]
+					}
+				},
+				{
+					"type": "footer",
+					"content": {
+						"layout": "porto",
+						"address": "1234 Street Name, City Name",
+						"phone": "(800) 123-4567",
+						"email": "mail@example.com",
+						"copyright": "© Copyright 2020. All Rights Reserved.",
+						"social_links": [
+							{
+								"platform": "facebook",
+								"url": "http://www.facebook.com/"
+							},
+							{
+								"platform": "twitter",
+								"url": "http://www.twitter.com/"
+							},
+							{
+								"platform": "linkedin",
+								"url": "http://www.linkedin.com/"
+							}
+						]
+					}
+				}
+			]
+		},
+		{
+			"title": "About",
+			"slug": "about",
+			"sections": [
+				{
+					"type": "header",
+					"content": {
+						"layout": "porto",
+						"logo_text": "The Porto",
+						"logo_image": "/assets/webcraft/files/porto-restaurant/logo-restaurant.png",
+						"top_bar_text": "The best place to eat in downtown Porto!",
+						"phone": "123-456-7890"
+					}
+				},
+				{
+					"type": "page_banner",
+					"content": {
+						"layout": "parallax",
+						"title": "The <strong>Restaurant</strong>",
+						"background_image": "/assets/webcraft/files/porto-restaurant/parallax-restaurant-2.jpg"
+					}
+				},
+				{
+					"type": "text",
+					"content": {
+						"layout": "porto-about",
+						"title": "The best place to eat in downtown Porto!",
+						"image": "/assets/webcraft/files/porto-restaurant/gallery/restaurant-gallery-3.jpg",
+						"image_float": "left",
+						"body": "<p class=\"lead\">Gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat.</p><p>Lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat.</p><p>Gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris.</p><p>Gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor.</p>"
+					}
+				},
+				{
+					"type": "contact",
+					"content": {
+						"layout": "porto-about",
+						"title": "Get in <strong>Touch</strong>",
+						"subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu pulvinar magna.<br>Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
+						"show_divider": true,
+						"info_blocks": [
+							{
+								"title": "Book Now",
+								"phone": "(123) 456-789"
+							},
+							{
+								"title": "Visit Us",
+								"address": "123 Street Name, Porto"
+							}
+						]
+					}
+				},
+				{
+					"type": "footer",
+					"content": {
+						"layout": "porto",
+						"address": "1234 Street Name, City Name",
+						"phone": "(800) 123-4567",
+						"email": "mail@example.com",
+						"copyright": "© Copyright 2020. All Rights Reserved.",
+						"social_links": [
+							{
+								"platform": "facebook",
+								"url": "http://www.facebook.com/"
+							},
+							{
+								"platform": "twitter",
+								"url": "http://www.twitter.com/"
+							},
+							{
+								"platform": "linkedin",
+								"url": "http://www.linkedin.com/"
+							}
+						]
+					}
+				}
+			]
+		},
+		{
+			"title": "Press",
+			"slug": "press",
+			"sections": [
+				{
+					"type": "header",
+					"content": {
+						"layout": "porto",
+						"logo_text": "The Porto",
+						"logo_image": "/assets/webcraft/files/porto-restaurant/logo-restaurant.png",
+						"top_bar_text": "The best place to eat in downtown Porto!",
+						"phone": "123-456-7890"
+					}
+				},
+				{
+					"type": "page_banner",
+					"content": {
+						"layout": "simple",
+						"title": "Press <strong>&amp; </strong> Events",
+						"subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu pulvinar magna.<br>Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
+						"show_divider": true
+					}
+				},
+				{
+					"type": "features",
+					"content": {
+						"layout": "porto-press",
+						"items": [
+							{
+								"title": "Lorem ipsum dolor sit",
+								"date": "January 10, 2020",
+								"author": "John Doe",
+								"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu pulvinar magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem donec eu pulvinar magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu pulvinar magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
+								"image": "/assets/webcraft/files/porto-restaurant/blog/blog-restaurant-4.jpg",
+								"button_label": "Read More",
+								"url": "/restaurant/press"
+							},
+							{
+								"title": "Lorem ipsum dolor sit",
+								"date": "January 10, 2020",
+								"author": "John Doe",
+								"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu pulvinar magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem donec eu pulvinar magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu pulvinar magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
+								"image": "/assets/webcraft/files/porto-restaurant/blog/blog-restaurant-5.jpg",
+								"button_label": "Read More",
+								"url": "/restaurant/press"
+							},
+							{
+								"title": "Lorem ipsum dolor sit",
+								"date": "January 10, 2020",
+								"author": "John Doe",
+								"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu pulvinar magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem donec eu pulvinar magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu pulvinar magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
+								"image": "/assets/webcraft/files/porto-restaurant/blog/blog-restaurant-6.jpg",
+								"button_label": "Read More",
+								"url": "/restaurant/press"
+							}
+						]
+					}
+				},
+				{
+					"type": "footer",
+					"content": {
+						"layout": "porto",
+						"address": "1234 Street Name, City Name",
+						"phone": "(800) 123-4567",
+						"email": "mail@example.com",
+						"copyright": "© Copyright 2020. All Rights Reserved.",
+						"social_links": [
+							{
+								"platform": "facebook",
+								"url": "http://www.facebook.com/"
+							},
+							{
+								"platform": "twitter",
+								"url": "http://www.twitter.com/"
+							},
+							{
+								"platform": "linkedin",
+								"url": "http://www.linkedin.com/"
+							}
+						]
+					}
+				}
+			]
+		},
+		{
+			"title": "Contact",
+			"slug": "contact",
+			"sections": [
+				{
+					"type": "header",
+					"content": {
+						"layout": "porto",
+						"logo_text": "The Porto",
+						"logo_image": "/assets/webcraft/files/porto-restaurant/logo-restaurant.png",
+						"top_bar_text": "The best place to eat in downtown Porto!",
+						"phone": "123-456-7890"
+					}
+				},
+				{
+					"type": "page_banner",
+					"content": {
+						"layout": "simple",
+						"title": "Get in <strong>Touch</strong>",
+						"subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu pulvinar magna.<br>Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
+						"show_divider": true
+					}
+				},
+				{
+					"type": "contact",
+					"content": {
+						"layout": "porto",
+						"form_title": "Send a Message",
+						"show_map": true,
+						"map_link": "http://maps.google.com/",
+						"map_embed_url": "https://maps.google.com/maps?q=Porto,+Portugal&z=14&output=embed",
+						"info_blocks": [
+							{
+								"title": "Book Now",
+								"phone": "(123) 456-789"
+							},
+							{
+								"title": "Private Events",
+								"phone": "(123) 456-789"
+							},
+							{
+								"title": "Visit Us",
+								"address": "123 Street Name, Porto"
+							}
+						],
+						"hours": [
+							{
+								"title": "Lunch Hours",
+								"lines": [
+									"Monday - Friday - 9am to 5pm",
+									"Saturday - 9am to 2pm",
+									"Sunday - Closed"
+								]
+							},
+							{
+								"title": "Dining Hours",
+								"lines": [
+									"Monday - Friday - 9am to 5pm",
+									"Saturday - 9am to 2pm",
+									"Sunday - Closed"
+								]
+							}
+						]
+					}
+				},
+				{
+					"type": "footer",
+					"content": {
+						"layout": "porto",
+						"address": "1234 Street Name, City Name",
+						"phone": "(800) 123-4567",
+						"email": "mail@example.com",
+						"copyright": "© Copyright 2020. All Rights Reserved.",
+						"social_links": [
+							{
+								"platform": "facebook",
+								"url": "http://www.facebook.com/"
+							},
+							{
+								"platform": "twitter",
+								"url": "http://www.twitter.com/"
+							},
+							{
+								"platform": "linkedin",
+								"url": "http://www.linkedin.com/"
+							}
+						]
+					}
+				}
+			]
+		}
+	],
+	"menus": [
+		{
+			"name": "Main Navigation",
+			"location": "Header",
+			"items": [
+				{
+					"label": "Home",
+					"page": "Home",
+					"url": "/restaurant"
+				},
+				{
+					"label": "Menu",
+					"page": "Menu",
+					"url": "/restaurant/menu"
+				},
+				{
+					"label": "About",
+					"page": "About",
+					"url": "/restaurant/about"
+				},
+				{
+					"label": "Press",
+					"page": "Press",
+					"url": "/restaurant/press"
+				},
+				{
+					"label": "Contact",
+					"page": "Contact",
+					"url": "/restaurant/contact"
+				}
+			]
+		}
+	],
+	"assets": [
+		"/assets/webcraft/files/porto-restaurant/background-restaurant.png",
+		"/assets/webcraft/files/porto-restaurant/blog/blog-restaurant-1.png",
+		"/assets/webcraft/files/porto-restaurant/blog/blog-restaurant-2.png",
+		"/assets/webcraft/files/porto-restaurant/blog/blog-restaurant-3.png",
+		"/assets/webcraft/files/porto-restaurant/blog/blog-restaurant-4.jpg",
+		"/assets/webcraft/files/porto-restaurant/blog/blog-restaurant-5.jpg",
+		"/assets/webcraft/files/porto-restaurant/blog/blog-restaurant-6.jpg",
+		"/assets/webcraft/files/porto-restaurant/custom-divider-1.png",
+		"/assets/webcraft/files/porto-restaurant/gallery/restaurant-gallery-1.jpg",
+		"/assets/webcraft/files/porto-restaurant/gallery/restaurant-gallery-2.jpg",
+		"/assets/webcraft/files/porto-restaurant/gallery/restaurant-gallery-3.jpg",
+		"/assets/webcraft/files/porto-restaurant/gallery/restaurant-gallery-4.jpg",
+		"/assets/webcraft/files/porto-restaurant/gallery/restaurant-gallery-5.jpg",
+		"/assets/webcraft/files/porto-restaurant/gallery/restaurant-gallery-7.jpg",
+		"/assets/webcraft/files/porto-restaurant/icons/restaurant-icon-1.png",
+		"/assets/webcraft/files/porto-restaurant/icons/restaurant-icon-2.png",
+		"/assets/webcraft/files/porto-restaurant/icons/restaurant-icon-3.png",
+		"/assets/webcraft/files/porto-restaurant/logo-restaurant.png",
+		"/assets/webcraft/files/porto-restaurant/parallax-restaurant-2.jpg",
+		"/assets/webcraft/files/porto-restaurant/parallax-restaurant.jpg",
+		"/assets/webcraft/files/porto-restaurant/products/product-1.jpg",
+		"/assets/webcraft/files/porto-restaurant/products/product-2.jpg",
+		"/assets/webcraft/files/porto-restaurant/products/product-3.jpg",
+		"/assets/webcraft/files/porto-restaurant/products/product-4.jpg",
+		"/assets/webcraft/files/porto-restaurant/products/product-5.jpg",
+		"/assets/webcraft/files/porto-restaurant/slide-title-border.png",
+		"/assets/webcraft/files/porto-restaurant/slides/slide-restaurant-1.jpg",
+		"/assets/webcraft/files/porto-restaurant/slides/slide-restaurant-2.jpg",
+		"/assets/webcraft/files/porto-restaurant/team-26.jpg",
+		"/assets/webcraft/files/porto-restaurant/team-27.jpg",
+		"/assets/webcraft/files/porto-restaurant/team-28.jpg"
+	]
+}

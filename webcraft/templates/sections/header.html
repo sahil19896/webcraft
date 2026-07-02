@@ -1,15 +1,30 @@
-<header class="wc-header wc-animate" data-wc-section="header"{% if section_id %} data-wc-section-id="{{ section_id }}"{% endif %}>
-	<div class="wc-container wc-header__inner">
+<header class="wc-header wc-animate{% if content.layout == 'porto' %} wc-header--porto{% endif %}" data-wc-section="header"{% if section_id %} data-wc-section-id="{{ section_id }}"{% endif %}>
+	{% if content.layout == 'porto' and (content.top_bar_text or content.phone) %}
+	<div class="wc-header-top">
+		<div class="wc-container wc-header-top__inner">
+			{% if content.top_bar_text %}<span>{{ content.top_bar_text }}</span>{% else %}<span></span>{% endif %}
+			{% if content.phone %}<a class="wc-header-top__phone" href="tel:{{ content.phone | replace(' ', '') | replace('(', '') | replace(')', '') | replace('-', '') }}"><i class="fab fa-whatsapp" aria-hidden="true"></i> {{ content.phone }}</a>{% endif %}
+		</div>
+	</div>
+	{% endif %}
+	<div class="wc-container wc-header__inner{% if content.layout == 'porto' %} wc-header-main{% endif %}">
 		<a class="wc-logo" href="{{ store_home_url or '/' ~ (store_route_prefix or 'wc') }}">
 			{% if site_brand and site_brand.logo_image %}
 			<img src="{{ site_brand.logo_image }}" alt="{{ site_brand.brand_name or content.logo_text or 'Logo' }}" class="wc-logo__image">
+			{% elif content.logo_image %}
+			<img src="{{ content.logo_image }}" alt="{{ content.logo_text or 'Logo' }}" class="wc-logo__image">
 			{% else %}
 			{{ (site_brand.brand_name if site_brand and site_brand.brand_name else None) or content.logo_text or 'WebCraft' }}
 			{% endif %}
 		</a>
-		<nav class="wc-nav" aria-label="Main navigation">
+		<button class="wc-nav-toggle" type="button" aria-controls="wc-main-nav" aria-expanded="false" aria-label="{{ _('Menu') }}">
+			<span class="wc-nav-toggle__bar"></span>
+			<span class="wc-nav-toggle__bar"></span>
+			<span class="wc-nav-toggle__bar"></span>
+		</button>
+		<nav class="wc-nav" id="wc-main-nav" aria-label="Main navigation">
 			{% for item in header_menu %}
-			<a href="{{ item.url }}" {% if item.open_in_new_tab %}target="_blank" rel="noopener"{% endif %}>
+			<a href="{{ item.url }}" class="{% if active_nav_url and item.url == active_nav_url %}is-active{% endif %}" {% if item.open_in_new_tab %}target="_blank" rel="noopener"{% endif %}>
 				{{ item.label }}
 			</a>
 			{% endfor %}

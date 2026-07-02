@@ -1,4 +1,7 @@
-<section class="wc-cta wc-animate" data-wc-section="cta"{% if section_id %} data-wc-section-id="{{ section_id }}"{% endif %}>
+<section class="wc-cta wc-animate{% if content.background_image %} wc-cta--photo{% endif %}" data-wc-section="cta"{% if section_id %} data-wc-section-id="{{ section_id }}"{% endif %}{% if content.background_image %} style="background-image:url('{{ content.background_image }}')"{% endif %}>
+	{% if content.background_image %}
+	<div class="wc-cta__overlay" aria-hidden="true"></div>
+	{% endif %}
 	<div class="wc-container wc-cta__inner">
 		<div>
 			<h2>{{ content.title }}</h2>

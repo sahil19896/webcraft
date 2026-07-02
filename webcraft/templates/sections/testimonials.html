@@ -1,10 +1,22 @@
-<section class="wc-section wc-section--surface wc-animate" data-wc-section="testimonials"{% if section_id %} data-wc-section-id="{{ section_id }}"{% endif %}>
+<section class="wc-section wc-section--surface{% if content.background_image %} wc-testimonials--photo{% endif %}{% if content.layout == 'porto' %} wc-testimonials--porto{% endif %}" data-wc-section="testimonials"{% if section_id %} data-wc-section-id="{{ section_id }}"{% endif %}{% if content.background_image %} style="background-image:url('{{ content.background_image }}')"{% endif %}>
+	{% if content.background_image %}
+	<div class="wc-testimonials__overlay" aria-hidden="true"></div>
+	{% endif %}
 	<div class="wc-container">
-		{% if content.title %}<h2 class="wc-section__title">{{ content.title }}</h2>{% endif %}
-		<div class="wc-grid wc-grid--2">
+		{% if content.show_divider and not content.title %}
+		<div class="wc-porto-head wc-porto-head--divider-only">
+			<hr class="wc-porto-divider">
+		</div>
+		{% elif content.title %}
+		<h2 class="wc-section__title">{{ content.title }}</h2>
+		{% endif %}
+		<div class="wc-testimonials__list{% if content.layout == 'porto' %} wc-testimonials__list--porto{% else %} wc-grid wc-grid--2{% endif %}">
 			{% for item in content['items'] or [] %}
 			<blockquote class="wc-quote">
-				<p>"{{ item.quote }}"</p>
+				{% if item.avatar and content.layout != 'porto' %}
+				<img class="wc-quote__avatar" src="{{ item.avatar }}" alt="{{ item.author or '' }}" loading="lazy">
+				{% endif %}
+				<p>{{ item.quote }}</p>
 				<footer>
 					<strong>{{ item.author }}</strong>
 					{% if item.role %}<span>{{ item.role }}</span>{% endif %}

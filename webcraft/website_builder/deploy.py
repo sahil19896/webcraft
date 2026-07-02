@@ -8,58 +8,43 @@ from __future__ import annotations
 import frappe
 from frappe.utils import now_datetime
 
+from webcraft.website_builder.access import clear_project_route_cache, deactivate_other_projects, sync_project_pages_published
+
 
 def publish_project(project: str) -> dict:
 	project_doc = frappe.get_doc("Website Project", project)
-	pages = frappe.get_all(
-		"Website Page",
-		filters={"website_project": project},
-		pluck="name",
-	)
-
-	published_count = 0
-	for page_name in pages:
-		page = frappe.get_doc("Website Page", page_name)
-		if not page.published:
-			page.published = 1
-			page.save(ignore_permissions=True)
-			published_count += 1
-
+	deactivate_other_projects(project)
+	project_doc.is_active = 1
 	project_doc.status = "Published"
 	project_doc.published_on = now_datetime()
 	project_doc.save(ignore_permissions=True)
 
+	sync_project_pages_published(project)
 	frappe.db.commit()
-	frappe.clear_cache()
 
-	from frappe.website.page_renderers.document_page import _find_matching_document_webview
-
-	_find_matching_document_webview.clear_cache()
 	homepage_route = None
 	if project_doc.homepage:
 		homepage_route = frappe.db.get_value("Website Page", project_doc.homepage, "route")
+	published_count = frappe.db.count("Website Page", {"website_project": project, "published": 1})
 	return {
 		"status": "Published",
 		"pages_published": published_count,
 		"homepage_route": homepage_route,
+		"is_active": 1,
 	}
 
 
 def unpublish_project(project: str) -> dict:
 	project_doc = frappe.get_doc("Website Project", project)
-	pages = frappe.get_all(
-		"Website Page",
-		filters={"website_project": project, "published": 1},
-		pluck="name",
-	)
-
-	for page_name in pages:
-		frappe.db.set_value("Website Page", page_name, "published", 0)
-
 	project_doc.status = "Draft"
+	project_doc.is_active = 0
 	project_doc.save(ignore_permissions=True)
-	frappe.clear_cache()
-	return {"status": "Draft", "pages_unpublished": len(pages)}
+
+	sync_project_pages_published(project)
+	frappe.db.commit()
+
+	pages = frappe.db.count("Website Page", {"website_project": project, "published": 0})
+	return {"status": "Draft", "pages_unpublished": pages, "is_active": 0}
 
 
 def get_publish_status(project: str) -> dict:
@@ -68,6 +53,8 @@ def get_publish_status(project: str) -> dict:
 	published = frappe.db.count("Website Page", {"website_project": project, "published": 1})
 	return {
 		"project_status": project_doc.status,
+		"is_active": bool(project_doc.is_active),
+		"is_live": bool(project_doc.is_active and project_doc.status == "Published"),
 		"total_pages": total,
 		"published_pages": published,
 		"homepage": project_doc.homepage,

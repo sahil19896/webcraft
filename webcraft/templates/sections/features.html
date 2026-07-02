@@ -1,4 +1,82 @@
-<section class="wc-section wc-animate" data-wc-section="features"{% if section_id %} data-wc-section-id="{{ section_id }}"{% endif %}>
+{% if content.layout == 'porto-thumb' %}
+<section class="wc-section wc-porto-thumb-section" data-wc-section="features"{% if section_id %} data-wc-section-id="{{ section_id }}"{% endif %}{% if content.anchor %} id="{{ content.anchor }}"{% endif %}>
+	<div class="wc-container">
+		<div class="wc-porto-head" data-wc-appear="fadeInUpShorter">
+			{% if content.title %}<h2>{{ content.title | safe }}</h2>{% endif %}
+			{% if content.subtitle %}<p>{{ content.subtitle }}</p>{% endif %}
+			{% if content.show_divider %}<hr class="wc-porto-divider">{% endif %}
+		</div>
+		<div class="wc-grid wc-grid--3">
+			{% for item in content['items'] or [] %}
+			<article class="wc-porto-thumb" data-wc-appear="fadeIn" data-wc-appear-delay="{{ loop.index0 * 300 }}">
+				<div class="wc-porto-thumb__media">
+					{% if item.image %}<img src="{{ item.image }}" alt="{{ item.title or '' }}" loading="lazy">{% endif %}
+					{% if item.icon and (item.icon.startswith('/') or item.icon.startswith('http')) %}
+					<img class="wc-porto-thumb__icon" src="{{ item.icon }}" alt="">
+					{% endif %}
+				</div>
+				<div class="wc-porto-thumb__caption">
+					<h3>{{ item.title }}</h3>
+					<p>{{ item.description }}</p>
+					{% if item.button_label %}
+					<a class="wc-btn wc-btn--primary" href="{{ item.button_url or '#' }}">{{ item.button_label }}</a>
+					{% endif %}
+				</div>
+			</article>
+			{% endfor %}
+		</div>
+	</div>
+</section>
+{% elif content.layout == 'porto-special-menu' %}
+<section class="wc-section wc-porto-special{% if not content.background_image %} wc-section--porto-default wc-porto-special--plain{% endif %}" data-wc-section="features"{% if section_id %} data-wc-section-id="{{ section_id }}"{% endif %}{% if content.background_image %} style="background-image:url('{{ content.background_image }}')"{% endif %}>
+	<div class="wc-container">
+		<div class="wc-porto-head" data-wc-appear="fadeInUpShorter">
+			{% if content.title %}<h2>{{ content.title | safe }}</h2>{% endif %}
+			{% if content.subtitle %}<p>{{ content.subtitle }}</p>{% endif %}
+			{% if content.show_divider %}<hr class="wc-porto-divider">{% endif %}
+		</div>
+		<ul class="wc-porto-special__list">
+			{% for item in content['items'] or [] %}
+			<li class="wc-porto-special__item" data-wc-appear="fadeInUpShorter" data-wc-appear-delay="{{ loop.index0 * 150 }}">
+				{% if item.image %}<img src="{{ item.image }}" alt="{{ item.title or '' }}" loading="lazy">{% endif %}
+				<h3>{{ item.title | safe }}</h3>
+				<p><span>{{ item.description }}</span>{% if item.icon and item.icon.startswith('$') %}<strong class="wc-porto-special__price">{{ item.icon }}</strong>{% endif %}</p>
+			</li>
+			{% endfor %}
+		</ul>
+		{% if content.button_label %}
+		<div style="text-align:center;margin-top:2rem">
+			<a class="wc-btn wc-btn--primary wc-btn--lg" href="{{ content.button_url or '#' }}">{{ content.button_label }}</a>
+		</div>
+		{% endif %}
+	</div>
+</section>
+{% elif content.layout == 'porto-press' %}
+<section class="wc-section wc-section--porto-default wc-porto-press" data-wc-section="features"{% if section_id %} data-wc-section-id="{{ section_id }}"{% endif %}>
+	<div class="wc-container">
+		{% for item in content['items'] or [] %}
+		<article class="wc-porto-press-item" data-wc-appear="fadeInUpShorter" data-wc-appear-delay="{{ loop.index0 * 150 }}">
+			{% if item.image %}
+			<a class="wc-porto-press-item__media" href="{{ item.url or '#' }}">
+				<img src="{{ item.image }}" alt="{{ item.title or '' }}" loading="lazy">
+			</a>
+			{% endif %}
+			<div class="wc-porto-press-item__body">
+				<h2><a href="{{ item.url or '#' }}">{{ item.title }}</a></h2>
+				{% if item.date or item.author %}
+				<p class="wc-porto-press-item__meta"><span>{{ item.date }}{% if item.date and item.author %} | {% endif %}{% if item.author %}{{ item.author }}{% endif %}</span></p>
+				{% endif %}
+				{% if item.description %}<p>{{ item.description }}</p>{% endif %}
+				{% if item.button_label %}
+				<a class="wc-porto-press-item__link" href="{{ item.url or '#' }}">{{ item.button_label }}</a>
+				{% endif %}
+			</div>
+		</article>
+		{% endfor %}
+	</div>
+</section>
+{% else %}
+<section class="wc-section wc-animate" data-wc-section="features"{% if section_id %} data-wc-section-id="{{ section_id }}"{% endif %}{% if content.anchor %} id="{{ content.anchor }}"{% endif %}{% if content.background_image %} style="background-image:url('{{ content.background_image }}');background-size:cover;background-position:center bottom;background-repeat:no-repeat"{% endif %}>
 	<div class="wc-container">
 		{% if content.title %}
 		<div class="wc-section__head">
@@ -8,8 +86,23 @@
 		{% endif %}
 		<div class="wc-grid wc-grid--3">
 			{% for item in content['items'] or [] %}
-			<article class="wc-card wc-card--feature">
-				<div class="wc-card__icon">{{ item.icon or '✦' }}</div>
+			<article class="wc-card wc-card--feature{% if item.image %} wc-card--feature-media{% endif %}">
+				{% if item.image %}
+				<div class="wc-card__media">
+					<img src="{{ item.image }}" alt="{{ item.title or '' }}" loading="lazy">
+					{% if item.icon and (item.icon.startswith('/') or item.icon.startswith('http')) %}
+					<img class="wc-card__icon-badge" src="{{ item.icon }}" alt="">
+					{% elif item.icon and item.icon.startswith('$') %}
+					<span class="wc-card__price-badge">{{ item.icon }}</span>
+					{% endif %}
+				</div>
+				{% elif item.icon and item.icon.startswith('$') %}
+				<div class="wc-card__price">{{ item.icon }}</div>
+				{% elif item.icon and (item.icon.startswith('/') or item.icon.startswith('http')) %}
+				<div class="wc-card__icon"><img src="{{ item.icon }}" alt="" class="wc-card__icon-img"></div>
+				{% elif item.icon %}
+				<div class="wc-card__icon">{{ item.icon }}</div>
+				{% endif %}
 				<h3>{{ item.title }}</h3>
 				<p>{{ item.description }}</p>
 			</article>
@@ -17,3 +110,4 @@
 		</div>
 	</div>
 </section>
+{% endif %}

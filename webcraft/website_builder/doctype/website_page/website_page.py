@@ -15,12 +15,29 @@ class WebsitePage(WebsiteGenerator):
 		self._normalize_sections()
 
 	def set_route(self):
-		if not self.route and self.page_title:
-			slug = frappe.scrub(self.page_title).replace("_", "-")
-			if self.is_homepage:
-				self.route = "wc"
-			else:
-				self.route = f"wc/{slug}"
+		if self.route:
+			return
+		if not self.page_title:
+			return
+		prefix = self._project_route_prefix()
+		slug = frappe.scrub(self.page_title).replace("_", "-")
+		if self.is_homepage:
+			self.route = prefix
+		else:
+			self.route = f"{prefix}/{slug}"
+
+	def _project_route_prefix(self) -> str:
+		if not self.website_project:
+			return "wc"
+		homepage = frappe.db.get_value("Website Project", self.website_project, "homepage")
+		if homepage:
+			home_route = (frappe.db.get_value("Website Page", homepage, "route") or "wc").strip("/")
+			if not home_route:
+				return "wc"
+			if "/" not in home_route:
+				return home_route
+			return home_route.split("/")[0] or "wc"
+		return "wc"
 
 	def _normalize_sections(self):
 		for row in self.sections or []:
@@ -56,4 +73,15 @@ class WebsitePage(WebsiteGenerator):
 			clear_cache(self.route)
 
 	def is_website_published(self):
-		return bool(self.published)
+		if not self.published:
+			return False
+		if not self.website_project:
+			return True
+
+		from webcraft.website_builder.access import is_project_live
+		from webcraft.website_builder.content.edit_map import is_wc_edit_mode
+
+		if is_project_live(self.website_project):
+			return True
+		# Desk editor preview for authorized users while site is inactive.
+		return is_wc_edit_mode()

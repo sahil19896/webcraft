@@ -1,0 +1,55 @@
+{% extends "templates/webcraft_base.html" %}
+
+{% block title %}{{ meta_title or page.page_title }}{% endblock %}
+
+{% block meta_block %}
+	{% if meta_description %}
+	<meta name="description" content="{{ meta_description }}">
+	{% endif %}
+	{% if meta_keywords %}
+	<meta name="keywords" content="{{ meta_keywords }}">
+	{% endif %}
+	{% if og_image %}
+	<meta property="og:image" content="{{ og_image }}">
+	{% endif %}
+	{% if canonical_url %}
+	<link rel="canonical" href="{{ canonical_url }}">
+	{% endif %}
+{% endblock %}
+
+{% block head_include %}
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="/assets/webcraft/css/webcraft.css">
+	<style>{{ theme_css | safe }}</style>
+{% endblock %}
+
+{% block page_content %}
+<main class="wc-page"
+	data-project="{{ project.name if project else '' }}"
+	data-commerce-enabled="{{ 1 if commerce_enabled else 0 }}"
+	data-store-prefix="{{ store_route_prefix or '' }}"
+	data-cart-url="{{ cart_url or '' }}"
+	data-checkout-url="{{ checkout_url or '' }}"
+	data-preview-template="{{ preview_template or '' }}">
+	{% for section in sections %}
+		{% set type = section.type %}
+		{% set content = section.content %}
+		{% set style = section.style %}
+		{% set section_id = section.id %}
+		{% include "templates/sections/" ~ type ~ ".html" ignore missing %}
+	{% endfor %}
+</main>
+{% endblock %}
+
+{% block script %}
+	<script src="/assets/webcraft/js/webcraft.js"></script>
+	{% if commerce_enabled %}
+	<script src="/assets/webcraft/js/webcraft-commerce.js"></script>
+	{% endif %}
+	{% if wc_edit_mode and wc_edit_config %}
+	<script type="application/json" id="wc-edit-config">{{ wc_edit_config | tojson }}</script>
+	<script src="/assets/webcraft/js/webcraft-edit-bridge.js"></script>
+	{% endif %}
+{% endblock %}

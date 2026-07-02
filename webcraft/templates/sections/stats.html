@@ -1,0 +1,13 @@
+<section class="wc-stats wc-animate" data-wc-section="stats"{% if section_id %} data-wc-section-id="{{ section_id }}"{% endif %}>
+	<div class="wc-container">
+		{% if content.title %}<h2 class="wc-stats__title">{{ content.title }}</h2>{% endif %}
+		<div class="wc-stats__grid">
+			{% for item in content['items'] or [] %}
+			<div class="wc-stat">
+				<div class="wc-stat__value">{{ item.value }}</div>
+				<div class="wc-stat__label">{{ item.label }}</div>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+</section>

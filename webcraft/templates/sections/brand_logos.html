@@ -1,0 +1,16 @@
+<section class="wc-section wc-animate" data-wc-section="brand_logos"{% if section_id %} data-wc-section-id="{{ section_id }}"{% endif %}>
+	<div class="wc-container">
+		{% if content.title %}<h2 class="wc-section__title-center">{{ content.title }}</h2>{% endif %}
+		<div class="wc-brand-logos">
+			{% for brand in content.brands or [] %}
+			<a class="wc-brand-logo" href="{{ brand.url or '#' }}" title="{{ brand.name }}">
+				{% if brand.logo %}
+				<img src="{{ brand.logo }}" alt="{{ brand.name }}" loading="lazy">
+				{% else %}
+				<span>{{ brand.name }}</span>
+				{% endif %}
+			</a>
+			{% endfor %}
+		</div>
+	</div>
+</section>

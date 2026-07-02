@@ -1,0 +1,88 @@
+{# Renders a WebCraft form from Website Form field definitions #}
+<form class="wc-form" data-wc-form="{{ form_name }}" {% if preview %}data-wc-preview="1"{% endif %} novalidate>
+	{% if form.title %}
+	<h3 class="wc-form__title">{{ form.title }}</h3>
+	{% endif %}
+	{% if form.description %}
+	<p class="wc-form__description">{{ form.description }}</p>
+	{% endif %}
+
+	<div class="wc-form__grid">
+		{% for field in fields %}
+			{% if field.field_type == 'Heading' %}
+			<div class="wc-form__field wc-form__field--full wc-form__heading">
+				<h4>{{ field.label }}</h4>
+			</div>
+			{% elif field.field_type == 'Divider' %}
+			<div class="wc-form__field wc-form__field--full wc-form__divider"><hr></div>
+			{% elif field.field_type == 'Radio' %}
+			<div class="wc-form__field {{ 'wc-form__field--half' if field.width == 'Half' else 'wc-form__field--third' if field.width == 'Third' else 'wc-form__field--full' }}">
+				<span class="wc-form__label">{{ field.label }}{% if field.required %} *{% endif %}</span>
+				<div class="wc-form__radio-group">
+					{% for opt in field.options %}
+					<label class="wc-form__radio"><input type="radio" name="{{ field.fieldname }}" value="{{ opt }}" {% if field.required %}required{% endif %}> {{ opt }}</label>
+					{% endfor %}
+				</div>
+				{% if field.help_text %}<small class="wc-form__help">{{ field.help_text }}</small>{% endif %}
+			</div>
+			{% elif field.field_type == 'Checkbox' or field.field_type == 'Switch' %}
+			<div class="wc-form__field wc-form__field--full wc-form__checkbox">
+				<label><input type="checkbox" name="{{ field.fieldname }}" {% if field.required %}required{% endif %}> {{ field.label }}{% if field.required %} *{% endif %}</label>
+				{% if field.help_text %}<small class="wc-form__help">{{ field.help_text }}</small>{% endif %}
+			</div>
+			{% elif field.field_type == 'Select' %}
+			<label class="wc-form__field {{ 'wc-form__field--half' if field.width == 'Half' else 'wc-form__field--third' if field.width == 'Third' else 'wc-form__field--full' }}">
+				<span class="wc-form__label">{{ field.label }}{% if field.required %} *{% endif %}</span>
+				<select name="{{ field.fieldname }}" {% if field.required %}required{% endif %}>
+					<option value="">{{ field.placeholder or 'Select...' }}</option>
+					{% for opt in field.options %}
+					<option value="{{ opt }}">{{ opt }}</option>
+					{% endfor %}
+				</select>
+				{% if field.help_text %}<small class="wc-form__help">{{ field.help_text }}</small>{% endif %}
+			</label>
+			{% elif field.field_type == 'Textarea' or field.field_type == 'Address' %}
+			<label class="wc-form__field {{ 'wc-form__field--half' if field.width == 'Half' else 'wc-form__field--third' if field.width == 'Third' else 'wc-form__field--full' }}">
+				<span class="wc-form__label">{{ field.label }}{% if field.required %} *{% endif %}</span>
+				<textarea name="{{ field.fieldname }}" rows="4" placeholder="{{ field.placeholder or '' }}" {% if field.required %}required{% endif %}>{{ field.default_value or '' }}</textarea>
+				{% if field.help_text %}<small class="wc-form__help">{{ field.help_text }}</small>{% endif %}
+			</label>
+			{% elif field.field_type == 'Rating' %}
+			<label class="wc-form__field wc-form__field--full">
+				<span class="wc-form__label">{{ field.label }}{% if field.required %} *{% endif %}</span>
+				<input type="number" name="{{ field.fieldname }}" min="1" max="5" step="1" placeholder="1-5" {% if field.required %}required{% endif %}>
+				{% if field.help_text %}<small class="wc-form__help">{{ field.help_text }}</small>{% endif %}
+			</label>
+			{% elif field.field_type in ['File Upload', 'Image Upload'] %}
+			<label class="wc-form__field {{ 'wc-form__field--half' if field.width == 'Half' else 'wc-form__field--full' }}">
+				<span class="wc-form__label">{{ field.label }}{% if field.required %} *{% endif %}</span>
+				<input type="file" name="{{ field.fieldname }}" {% if field.field_type == 'Image Upload' %}accept="image/*"{% endif %} {% if field.required %}required{% endif %}>
+				{% if field.help_text %}<small class="wc-form__help">{{ field.help_text }}</small>{% endif %}
+			</label>
+			{% else %}
+			{% set html_type = 'text' %}
+			{% if field.field_type == 'Email' %}{% set html_type = 'email' %}
+			{% elif field.field_type == 'Phone' %}{% set html_type = 'tel' %}
+			{% elif field.field_type == 'URL' %}{% set html_type = 'url' %}
+			{% elif field.field_type == 'Number' or field.field_type == 'Currency' %}{% set html_type = 'number' %}
+			{% elif field.field_type == 'Password' %}{% set html_type = 'password' %}
+			{% elif field.field_type == 'Date' %}{% set html_type = 'date' %}
+			{% elif field.field_type == 'Time' %}{% set html_type = 'time' %}
+			{% elif field.field_type == 'Color' %}{% set html_type = 'color' %}
+			{% elif field.field_type == 'Slider' %}{% set html_type = 'range' %}
+			{% endif %}
+			<label class="wc-form__field {{ 'wc-form__field--half' if field.width == 'Half' else 'wc-form__field--third' if field.width == 'Third' else 'wc-form__field--full' }}">
+				<span class="wc-form__label">{{ field.label }}{% if field.required %} *{% endif %}</span>
+				<input type="{{ html_type }}" name="{{ field.fieldname }}" value="{{ field.default_value or '' }}" placeholder="{{ field.placeholder or '' }}" {% if field.required %}required{% endif %}{% if html_type == 'range' %} min="0" max="100"{% endif %}>
+				{% if field.help_text %}<small class="wc-form__help">{{ field.help_text }}</small>{% endif %}
+			</label>
+			{% endif %}
+		{% endfor %}
+	</div>
+
+	{# Honeypot — hidden from users #}
+	<input type="text" name="_wc_honeypot" class="wc-form__honeypot" tabindex="-1" autocomplete="off">
+
+	<button type="submit" class="wc-btn wc-btn--primary">{{ submit_label or 'Submit' }}</button>
+	<p class="wc-form__status" hidden></p>
+</form>

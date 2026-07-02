@@ -1,0 +1,10 @@
+<div class="wc-marquee wc-animate wc-marquee--{{ content.speed or 'slow' }}" data-wc-section="marquee"{% if section_id %} data-wc-section-id="{{ section_id }}"{% endif %}>
+	<div class="wc-marquee__track">
+		{% for item in content['items'] or [] %}
+		<span>{{ item }}</span>
+		{% endfor %}
+		{% for item in content['items'] or [] %}
+		<span aria-hidden="true">{{ item }}</span>
+		{% endfor %}
+	</div>
+</div>

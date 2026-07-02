@@ -1,0 +1,52 @@
+<section class="wc-section wc-animate" data-wc-section="checkout"{% if section_id %} data-wc-section-id="{{ section_id }}"{% endif %}>
+	<div class="wc-container wc-commerce">
+		<div class="wc-section__head">
+			<h1>{{ content.title or 'Checkout' }}</h1>
+			{% if content.subtitle %}<p>{{ content.subtitle }}</p>{% endif %}
+		</div>
+		<div class="wc-checkout" data-wc-checkout-root>
+			<div class="wc-checkout__loading" data-wc-checkout-loading>Loading checkout…</div>
+			<div class="wc-checkout__guest" data-wc-checkout-guest hidden>
+				<p>Please log in to complete your purchase. Your cart is saved as a quotation in ERPNext.</p>
+				<a class="wc-btn wc-btn--primary" href="/login?redirect-to={{ checkout_url or '/store/checkout' }}">Log In to Checkout</a>
+			</div>
+			<div class="wc-checkout__body" data-wc-checkout-body hidden>
+				<div class="wc-checkout__grid">
+					<div class="wc-checkout__addresses">
+						<h2>Shipping Address</h2>
+						<select class="wc-input" data-wc-shipping-address></select>
+						<h2>Billing Address</h2>
+						<select class="wc-input" data-wc-billing-address></select>
+						<details class="wc-checkout__new-address">
+							<summary>Add new address</summary>
+							<form class="wc-checkout__address-form" data-wc-address-form>
+								<input class="wc-input" name="address_title" placeholder="Address title" required>
+								<input class="wc-input" name="address_line1" placeholder="Address line 1" required>
+								<input class="wc-input" name="address_line2" placeholder="Address line 2">
+								<input class="wc-input" name="city" placeholder="City" required>
+								<input class="wc-input" name="state" placeholder="State">
+								<input class="wc-input" name="pincode" placeholder="Postal code" required>
+								<input class="wc-input" name="country" placeholder="Country" required>
+								<select class="wc-input" name="address_type">
+									<option value="Shipping">Shipping</option>
+									<option value="Billing">Billing</option>
+								</select>
+								<button type="submit" class="wc-btn wc-btn--ghost">Save Address</button>
+							</form>
+						</details>
+					</div>
+					<aside class="wc-checkout__summary">
+						<h2>Order Summary</h2>
+						<div data-wc-checkout-items></div>
+						<div data-wc-checkout-totals></div>
+						<button type="button" class="wc-btn wc-btn--primary wc-btn--lg" data-wc-place-order>
+							Place Order
+						</button>
+						<p class="wc-muted wc-checkout__note">Your cart is stored as a Quotation and converted to a Sales Order when you place the order.</p>
+					</aside>
+				</div>
+			</div>
+			<p class="wc-commerce__message" data-wc-commerce-message hidden></p>
+		</div>
+	</div>
+</section>

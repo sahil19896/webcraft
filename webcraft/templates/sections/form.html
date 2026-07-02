@@ -1,0 +1,15 @@
+<section class="wc-section wc-animate" data-wc-section="form"{% if section_id %} data-wc-section-id="{{ section_id }}"{% endif %}>
+	<div class="wc-container wc-form-section">
+		{% if content.title %}
+		<div class="wc-section__head">
+			<h2>{{ content.title }}</h2>
+			{% if content.subtitle %}<p>{{ content.subtitle }}</p>{% endif %}
+		</div>
+		{% endif %}
+		{% if content.form %}
+			{{ render_form_html(content.form) | safe }}
+		{% else %}
+			<p class="wc-muted">{{ _('Select a form in the builder.') }}</p>
+		{% endif %}
+	</div>
+</section>

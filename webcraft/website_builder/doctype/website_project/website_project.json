@@ -1,0 +1,148 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:project_name",
+ "creation": "2026-06-28 10:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "project_name",
+  "status",
+  "column_break_1",
+  "website_template",
+  "website_theme",
+  "homepage",
+  "site",
+  "section_break_2",
+  "description",
+  "published_on",
+  "is_active"
+ ],
+ "fields": [
+  {
+   "fieldname": "project_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Project Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "default": "Draft",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Status",
+   "options": "Draft\nPublished\nArchived"
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "website_template",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Template",
+   "options": "Website Template"
+  },
+  {
+   "fieldname": "website_theme",
+   "fieldtype": "Link",
+   "label": "Theme",
+   "options": "Website Theme"
+  },
+  {
+   "fieldname": "homepage",
+   "fieldtype": "Link",
+   "label": "Homepage",
+   "options": "Website Page"
+  },
+  {
+   "fieldname": "site",
+   "fieldtype": "Data",
+   "label": "Site",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_2",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description"
+  },
+  {
+   "fieldname": "published_on",
+   "fieldtype": "Datetime",
+   "label": "Published On",
+   "read_only": 1
+  },
+  {
+   "default": "1",
+   "fieldname": "is_active",
+   "fieldtype": "Check",
+   "label": "Is Active"
+  }
+ ],
+ "links": [
+  {
+   "group": "Content",
+   "link_doctype": "Website Page",
+   "link_fieldname": "website_project"
+  },
+  {
+   "group": "Content",
+   "link_doctype": "Website Menu",
+   "link_fieldname": "website_project"
+  },
+  {
+   "group": "Content",
+   "link_doctype": "Website Form",
+   "link_fieldname": "website_project"
+  },
+  {
+   "group": "Assets",
+   "link_doctype": "Website Asset",
+   "link_fieldname": "website_project"
+  }
+ ],
+ "modified": "2026-06-28 10:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Website Builder",
+ "name": "Website Project",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Website Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

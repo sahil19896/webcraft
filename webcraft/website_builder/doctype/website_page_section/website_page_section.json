@@ -1,0 +1,70 @@
+{
+ "actions": [],
+ "creation": "2026-06-28 10:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "section_type",
+  "section_order",
+  "is_hidden",
+  "column_break_1",
+  "content",
+  "style",
+  "settings"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_type",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Section Type",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "section_order",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Order"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_hidden",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Hidden"
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "content",
+   "fieldtype": "JSON",
+   "label": "Content"
+  },
+  {
+   "fieldname": "style",
+   "fieldtype": "JSON",
+   "label": "Style"
+  },
+  {
+   "fieldname": "settings",
+   "fieldtype": "JSON",
+   "label": "Settings"
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-06-28 10:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Website Builder",
+ "name": "Website Page Section",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "section_order",
+ "sort_order": "ASC",
+ "states": []
+}

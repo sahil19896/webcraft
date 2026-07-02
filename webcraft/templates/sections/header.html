@@ -1,0 +1,31 @@
+<header class="wc-header wc-animate" data-wc-section="header"{% if section_id %} data-wc-section-id="{{ section_id }}"{% endif %}>
+	<div class="wc-container wc-header__inner">
+		<a class="wc-logo" href="{{ store_home_url or '/' ~ (store_route_prefix or 'wc') }}">
+			{% if site_brand and site_brand.logo_image %}
+			<img src="{{ site_brand.logo_image }}" alt="{{ site_brand.brand_name or content.logo_text or 'Logo' }}" class="wc-logo__image">
+			{% else %}
+			{{ (site_brand.brand_name if site_brand and site_brand.brand_name else None) or content.logo_text or 'WebCraft' }}
+			{% endif %}
+		</a>
+		<nav class="wc-nav" aria-label="Main navigation">
+			{% for item in header_menu %}
+			<a href="{{ item.url }}" {% if item.open_in_new_tab %}target="_blank" rel="noopener"{% endif %}>
+				{{ item.label }}
+			</a>
+			{% endfor %}
+		</nav>
+		<div class="wc-header__actions">
+			{% if commerce_enabled %}
+			<a class="wc-cart-link" href="{{ cart_url or '#' }}" aria-label="Shopping cart">
+				<svg class="wc-cart-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+					<circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+					<path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+				</svg>
+				<span class="wc-cart-count" data-wc-cart-count hidden>0</span>
+			</a>
+			{% elif content.cta_label %}
+			<a class="wc-btn wc-btn--primary" href="{{ content.cta_url or '#' }}">{{ content.cta_label }}</a>
+			{% endif %}
+		</div>
+	</div>
+</header>

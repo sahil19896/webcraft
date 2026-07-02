@@ -1,0 +1,30 @@
+<section class="wc-section wc-animate" data-wc-section="product_detail"{% if section_id %} data-wc-section-id="{{ section_id }}"{% endif %}>
+	<div class="wc-container">
+		{% set product = content.product or {} %}
+		<div class="wc-product-detail" data-item-code="{{ content.item_code or product.item_code }}">
+			<div class="wc-product-detail__media">
+				{% if product.image %}
+				<img src="{{ product.image }}" alt="{{ product.name }}" class="wc-product-detail__image">
+				{% else %}
+				<div class="wc-product-detail__placeholder"></div>
+				{% endif %}
+			</div>
+			<div class="wc-product-detail__info">
+				{% if product.brand %}<p class="wc-muted wc-product-detail__brand">{{ product.brand }}</p>{% endif %}
+				<h1 class="wc-product-detail__title">{{ product.name }}</h1>
+				{% if product.price %}<p class="wc-product-detail__price">{{ product.price }}</p>{% endif %}
+				{% if product.description %}
+				<div class="wc-product-detail__description">{{ product.description | safe }}</div>
+				{% endif %}
+				<div class="wc-product-detail__actions">
+					<label class="wc-qty-label" for="wc-product-qty">Qty</label>
+					<input type="number" id="wc-product-qty" class="wc-input wc-qty-input" value="1" min="1" max="99">
+					<button type="button" class="wc-btn wc-btn--primary wc-btn--lg wc-add-to-cart" data-item-code="{{ content.item_code or product.item_code }}">
+						Add to Cart
+					</button>
+				</div>
+				<p class="wc-product-detail__status" data-wc-product-status hidden></p>
+			</div>
+		</div>
+	</div>
+</section>

@@ -1,0 +1,208 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:theme_name",
+ "creation": "2026-06-28 10:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "theme_name",
+  "website_project",
+  "column_break_1",
+  "is_default",
+  "section_break_colors",
+  "primary_color",
+  "secondary_color",
+  "accent_color",
+  "column_break_colors",
+  "background_color",
+  "text_color",
+  "surface_color",
+  "section_break_typography",
+  "font_family",
+  "heading_font",
+  "base_font_size",
+  "section_break_branding",
+  "brand_name",
+  "logo_image",
+  "section_break_layout",
+  "border_radius",
+  "spacing_scale",
+  "button_style",
+  "custom_css",
+  "animations_enabled"
+ ],
+ "fields": [
+  {
+   "fieldname": "theme_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Theme Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "website_project",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Website Project",
+   "options": "Website Project"
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_default",
+   "fieldtype": "Check",
+   "label": "Is Default"
+  },
+  {
+   "fieldname": "section_break_colors",
+   "fieldtype": "Section Break",
+   "label": "Colors"
+  },
+  {
+   "default": "#2563eb",
+   "fieldname": "primary_color",
+   "fieldtype": "Color",
+   "label": "Primary"
+  },
+  {
+   "default": "#1e40af",
+   "fieldname": "secondary_color",
+   "fieldtype": "Color",
+   "label": "Secondary"
+  },
+  {
+   "default": "#f59e0b",
+   "fieldname": "accent_color",
+   "fieldtype": "Color",
+   "label": "Accent"
+  },
+  {
+   "fieldname": "column_break_colors",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "#ffffff",
+   "fieldname": "background_color",
+   "fieldtype": "Color",
+   "label": "Background"
+  },
+  {
+   "default": "#0f172a",
+   "fieldname": "text_color",
+   "fieldtype": "Color",
+   "label": "Text"
+  },
+  {
+   "default": "#f8fafc",
+   "fieldname": "surface_color",
+   "fieldtype": "Color",
+   "label": "Surface"
+  },
+  {
+   "fieldname": "section_break_typography",
+   "fieldtype": "Section Break",
+   "label": "Typography"
+  },
+  {
+   "default": "Inter, system-ui, sans-serif",
+   "fieldname": "font_family",
+   "fieldtype": "Data",
+   "label": "Font Family"
+  },
+  {
+   "default": "Inter, system-ui, sans-serif",
+   "fieldname": "heading_font",
+   "fieldtype": "Data",
+   "label": "Heading Font"
+  },
+  {
+   "default": "16",
+   "fieldname": "base_font_size",
+   "fieldtype": "Int",
+   "label": "Base Font Size (px)"
+  },
+  {
+   "fieldname": "section_break_branding",
+   "fieldtype": "Section Break",
+   "label": "Branding"
+  },
+  {
+   "fieldname": "brand_name",
+   "fieldtype": "Data",
+   "label": "Brand / Logo Text"
+  },
+  {
+   "fieldname": "logo_image",
+   "fieldtype": "Attach Image",
+   "label": "Logo Image"
+  },
+  {
+   "fieldname": "section_break_layout",
+   "fieldtype": "Section Break",
+   "label": "Layout & Effects"
+  },
+  {
+   "default": "8",
+   "fieldname": "border_radius",
+   "fieldtype": "Int",
+   "label": "Border Radius (px)"
+  },
+  {
+   "default": "1",
+   "fieldname": "spacing_scale",
+   "fieldtype": "Float",
+   "label": "Spacing Scale"
+  },
+  {
+   "fieldname": "button_style",
+   "fieldtype": "JSON",
+   "label": "Button Style"
+  },
+  {
+   "fieldname": "custom_css",
+   "fieldtype": "Code",
+   "label": "Custom CSS",
+   "options": "CSS"
+  },
+  {
+   "default": "1",
+   "fieldname": "animations_enabled",
+   "fieldtype": "Check",
+   "label": "Animations Enabled"
+  }
+ ],
+ "modified": "2026-06-28 10:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Website Builder",
+ "name": "Website Theme",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "read": 1,
+   "role": "Website Manager",
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

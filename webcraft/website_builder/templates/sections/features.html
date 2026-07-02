@@ -1,0 +1,19 @@
+<section class="wc-section wc-animate" data-wc-section="features">
+	<div class="wc-container">
+		{% if content.title %}
+		<div class="wc-section__head">
+			<h2>{{ content.title }}</h2>
+			{% if content.subtitle %}<p>{{ content.subtitle }}</p>{% endif %}
+		</div>
+		{% endif %}
+		<div class="wc-grid wc-grid--3">
+			{% for item in content.items or [] %}
+			<article class="wc-card wc-card--feature">
+				<div class="wc-card__icon">{{ item.icon or '✦' }}</div>
+				<h3>{{ item.title }}</h3>
+				<p>{{ item.description }}</p>
+			</article>
+			{% endfor %}
+		</div>
+	</div>
+</section>

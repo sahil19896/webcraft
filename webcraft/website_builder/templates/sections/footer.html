@@ -1,0 +1,11 @@
+<footer class="wc-footer wc-animate" data-wc-section="footer">
+	<div class="wc-container wc-footer__inner">
+		<div class="wc-logo">{{ content.logo_text or 'WebCraft' }}</div>
+		<nav class="wc-footer__nav">
+			{% for item in footer_menu %}
+			<a href="{{ item.url }}">{{ item.label }}</a>
+			{% endfor %}
+		</nav>
+		<p class="wc-muted">{{ content.copyright }}</p>
+	</div>
+</footer>

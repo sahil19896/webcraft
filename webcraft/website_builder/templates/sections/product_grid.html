@@ -1,0 +1,25 @@
+<section class="wc-section wc-animate" data-wc-section="product_grid">
+	<div class="wc-container">
+		{% if content.title %}
+		<div class="wc-section__head">
+			<h2>{{ content.title }}</h2>
+			{% if content.subtitle %}<p>{{ content.subtitle }}</p>{% endif %}
+		</div>
+		{% endif %}
+		<div class="wc-product-grid">
+			{% for product in content.products or [] %}
+			<a class="wc-product-card" href="{{ product.url or '#' }}">
+				<div class="wc-product-card__media">
+					{% if product.badge %}<span class="wc-badge">{{ product.badge }}</span>{% endif %}
+					<div class="wc-product-card__placeholder"></div>
+				</div>
+				<div class="wc-product-card__body">
+					<p class="wc-muted">{{ product.brand }}</p>
+					<h3>{{ product.name }}</h3>
+					<p class="wc-price-inline">{{ product.price }}</p>
+				</div>
+			</a>
+			{% endfor %}
+		</div>
+	</div>
+</section>

@@ -1,0 +1,40 @@
+<section class="wc-section wc-animate" data-wc-section="product_carousel"{% if section_id %} data-wc-section-id="{{ section_id }}"{% endif %}>
+	<div class="wc-container">
+		{% if content.title %}
+		<div class="wc-section__head wc-section__head--row">
+			<div>
+				<h2>{{ content.title }}</h2>
+				{% if content.subtitle %}<p>{{ content.subtitle }}</p>{% endif %}
+			</div>
+		</div>
+		{% endif %}
+		<div class="wc-product-carousel">
+			<div class="wc-product-carousel__track">
+				{% for product in content.products or [] %}
+				<article class="wc-product-card wc-product-card--compact" data-item-code="{{ product.item_code or '' }}">
+					<a class="wc-product-card__link" href="{{ product.url or '#' }}">
+						<div class="wc-product-card__media">
+							{% if product.badge %}<span class="wc-badge">{{ product.badge }}</span>{% endif %}
+							{% if product.image %}
+							<img src="{{ product.image }}" alt="{{ product.name }}" loading="lazy">
+							{% else %}
+							<div class="wc-product-card__placeholder"></div>
+							{% endif %}
+						</div>
+						<div class="wc-product-card__body">
+							<p class="wc-muted">{{ product.brand }}</p>
+							<h3>{{ product.name }}</h3>
+							<p class="wc-price-inline">{{ product.price }}</p>
+						</div>
+					</a>
+					{% if commerce_enabled and product.item_code %}
+					<button type="button" class="wc-btn wc-btn--primary wc-btn--sm wc-add-to-cart" data-item-code="{{ product.item_code }}">
+						Add to Cart
+					</button>
+					{% endif %}
+				</article>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+</section>

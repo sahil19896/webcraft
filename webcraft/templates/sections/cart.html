@@ -1,0 +1,24 @@
+<section class="wc-section wc-animate" data-wc-section="cart"{% if section_id %} data-wc-section-id="{{ section_id }}"{% endif %}>
+	<div class="wc-container wc-commerce">
+		<div class="wc-section__head">
+			<h1>{{ content.title or 'Your Cart' }}</h1>
+			{% if content.subtitle %}<p>{{ content.subtitle }}</p>{% endif %}
+		</div>
+		<div class="wc-cart" data-wc-cart-root>
+			<div class="wc-cart__loading" data-wc-cart-loading>Loading cart…</div>
+			<div class="wc-cart__empty" data-wc-cart-empty hidden>
+				<p>Your cart is empty.</p>
+				<a class="wc-btn wc-btn--primary" href="{{ store_home_url or '/' ~ (store_route_prefix or 'store') }}">Continue Shopping</a>
+			</div>
+			<div class="wc-cart__body" data-wc-cart-body hidden>
+				<div class="wc-cart__items" data-wc-cart-items></div>
+				<aside class="wc-cart__summary">
+					<h2>Order Summary</h2>
+					<div data-wc-cart-totals></div>
+					<a class="wc-btn wc-btn--primary wc-btn--lg wc-cart__checkout" href="{{ checkout_url or '#' }}">Proceed to Checkout</a>
+				</aside>
+			</div>
+			<p class="wc-commerce__message" data-wc-commerce-message hidden></p>
+		</div>
+	</div>
+</section>

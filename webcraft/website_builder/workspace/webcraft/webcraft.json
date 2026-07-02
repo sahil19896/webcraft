@@ -1,0 +1,83 @@
+{
+ "charts": [],
+ "content": "[]",
+ "creation": "2026-06-29 10:00:00.000000",
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "layout",
+ "idx": 0,
+ "is_hidden": 0,
+ "label": "WebCraft Hub",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Theme Store",
+   "link_count": 0,
+   "link_to": "webcraft",
+   "link_type": "Page",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "My Sites",
+   "link_count": 0,
+   "link_to": "Website Project",
+   "link_type": "DocType",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Edit Site",
+   "link_count": 0,
+   "link_to": "webcraft-customize",
+   "link_type": "Page",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Design Templates",
+   "link_count": 0,
+   "link_to": "Website Template",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2026-07-02 12:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Website Builder",
+ "name": "WebCraft Hub",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 10.0,
+ "shortcuts": [
+  {
+   "color": "Blue",
+   "icon": "layout",
+   "label": "Theme Store",
+   "link_to": "webcraft",
+   "type": "Page"
+  },
+  {
+   "color": "Green",
+   "icon": "folder",
+   "label": "My Sites",
+   "link_to": "Website Project",
+   "type": "Page"
+  }
+ ],
+ "title": "WebCraft Hub"
+}

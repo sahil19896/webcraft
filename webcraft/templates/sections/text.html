@@ -1,0 +1,6 @@
+<section class="wc-section wc-animate" data-wc-section="text"{% if section_id %} data-wc-section-id="{{ section_id }}"{% endif %}>
+	<div class="wc-container wc-prose wc-text__body">
+		{% if content.title %}<h2>{{ content.title }}</h2>{% endif %}
+		{{ content.body | safe }}
+	</div>
+</section>

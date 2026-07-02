@@ -1,0 +1,11 @@
+<section class="wc-cta wc-animate" data-wc-section="cta">
+	<div class="wc-container wc-cta__inner">
+		<div>
+			<h2>{{ content.title }}</h2>
+			{% if content.subtitle %}<p>{{ content.subtitle }}</p>{% endif %}
+		</div>
+		{% if content.button_label %}
+		<a class="wc-btn wc-btn--primary wc-btn--lg" href="{{ content.button_url or '#' }}">{{ content.button_label }}</a>
+		{% endif %}
+	</div>
+</section>

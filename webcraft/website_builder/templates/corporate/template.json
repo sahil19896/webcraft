@@ -1,0 +1,243 @@
+{
+	"key": "corporate",
+	"title": "Corporate Blue",
+	"description": "A polished corporate website with hero, features, testimonials, pricing, and contact sections.",
+	"category": "Corporate",
+	"version": "1.0.0",
+	"preview_image": "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80",
+	"features": ["Hero & features", "Testimonials", "Pricing table", "Contact form"],
+	"theme": {
+		"theme_name": "Corporate Blue",
+		"primary_color": "#2563eb",
+		"secondary_color": "#1e40af",
+		"accent_color": "#f59e0b",
+		"background_color": "#ffffff",
+		"text_color": "#0f172a",
+		"surface_color": "#f8fafc",
+		"font_family": "Inter, system-ui, sans-serif",
+		"heading_font": "Inter, system-ui, sans-serif",
+		"border_radius": 12,
+		"animations_enabled": 1,
+		"custom_css": ".wc-header { background: rgba(255,255,255,0.9); backdrop-filter: blur(14px); } .wc-hero { background: linear-gradient(180deg, #f8fafc 0%, #ffffff 55%); } .wc-btn--primary { color: #fff; } .wc-card, .wc-quote { box-shadow: 0 4px 24px rgba(15,23,42,0.06); } .wc-section__head h2 { letter-spacing: -0.03em; }"
+	},
+	"pages": [
+		{
+			"title": "Home",
+			"slug": "",
+			"is_homepage": true,
+			"seo": {
+				"title": "Home | Corporate Blue",
+				"description": "We build software that helps businesses grow."
+			},
+			"sections": [
+				{
+					"type": "header",
+					"content": {
+						"logo_text": "Acme Corp",
+						"cta_label": "Contact Us",
+						"cta_url": "/wc/contact"
+					}
+				},
+				{
+					"type": "hero",
+					"content": {
+						"eyebrow": "Trusted by 150+ companies",
+						"title": "We build software that moves businesses forward",
+						"subtitle": "Strategy, design, and engineering for modern companies.",
+						"button_label": "Get Started",
+						"button_url": "/wc/contact",
+						"secondary_button_label": "Our Services",
+						"secondary_button_url": "/wc/services",
+						"alignment": "left"
+					}
+				},
+				{
+					"type": "stats",
+					"content": {
+						"items": [
+							{"value": "150+", "label": "Projects delivered"},
+							{"value": "40+", "label": "Enterprise clients"},
+							{"value": "99.9%", "label": "Uptime SLA"}
+						]
+					}
+				},
+				{
+					"type": "features",
+					"content": {
+						"title": "Why teams choose us",
+						"subtitle": "End-to-end delivery from discovery to launch",
+						"items": [
+							{
+								"title": "Strategy First",
+								"description": "We align every build with measurable business outcomes.",
+								"icon": "target"
+							},
+							{
+								"title": "Design Excellence",
+								"description": "Interfaces that feel premium and convert visitors.",
+								"icon": "sparkles"
+							},
+							{
+								"title": "Engineering Quality",
+								"description": "Scalable systems built on proven frameworks.",
+								"icon": "code"
+							}
+						]
+					}
+				},
+				{
+					"type": "testimonials",
+					"content": {
+						"title": "Trusted by growing teams",
+						"items": [
+							{
+								"quote": "They shipped our new site in two weeks and our leads doubled.",
+								"author": "Sarah Chen",
+								"role": "VP Marketing, Northwind"
+							},
+							{
+								"quote": "The best partner we have worked with for digital products.",
+								"author": "Marcus Reid",
+								"role": "CTO, Brightline"
+							}
+						]
+					}
+				},
+				{
+					"type": "cta",
+					"content": {
+						"title": "Ready to launch your next project?",
+						"subtitle": "Book a free consultation with our team.",
+						"button_label": "Book a Call",
+						"button_url": "/wc/contact"
+					}
+				},
+				{
+					"type": "footer",
+					"content": {
+						"logo_text": "Acme Corp",
+						"copyright": "© 2026 Acme Corp. All rights reserved."
+					}
+				}
+			]
+		},
+		{
+			"title": "About",
+			"slug": "about",
+			"seo": {
+				"title": "About | Corporate Blue",
+				"description": "Learn about our mission and team."
+			},
+			"sections": [
+				{"type": "header", "content": {"logo_text": "Acme Corp"}},
+				{
+					"type": "hero",
+					"content": {
+						"title": "About Acme Corp",
+						"subtitle": "We help ambitious companies ship faster.",
+						"alignment": "center"
+					}
+				},
+				{
+					"type": "text",
+					"content": {
+						"title": "Our Story",
+						"body": "<p>Founded in 2018, Acme Corp partners with startups and enterprises to design, build, and scale digital products.</p>"
+					}
+				},
+				{
+					"type": "team",
+					"content": {
+						"title": "Leadership",
+						"members": [
+							{"name": "Jane Doe", "role": "CEO", "bio": "Former product lead at global SaaS companies."},
+							{"name": "John Smith", "role": "CTO", "bio": "Engineering leader focused on scalable architecture."}
+						]
+					}
+				},
+				{"type": "footer", "content": {"logo_text": "Acme Corp"}}
+			]
+		},
+		{
+			"title": "Services",
+			"slug": "services",
+			"sections": [
+				{"type": "header", "content": {"logo_text": "Acme Corp"}},
+				{
+					"type": "hero",
+					"content": {
+						"title": "Services",
+						"subtitle": "From discovery workshops to production launches.",
+						"alignment": "center"
+					}
+				},
+				{
+					"type": "features",
+					"content": {
+						"title": "What we do",
+						"items": [
+							{"title": "Product Strategy", "description": "Roadmaps, research, and positioning."},
+							{"title": "UX/UI Design", "description": "Design systems and high-fidelity prototypes."},
+							{"title": "Full-Stack Development", "description": "Web apps, APIs, and integrations."}
+						]
+					}
+				},
+				{
+					"type": "pricing",
+					"content": {
+						"title": "Engagement models",
+						"plans": [
+							{
+								"name": "Sprint",
+								"price": "$8k",
+								"period": "/2 weeks",
+								"features": ["Discovery", "Prototype", "Launch plan"],
+								"cta_label": "Book Sprint"
+							},
+							{
+								"name": "Retainer",
+								"price": "$12k",
+								"period": "/mo",
+								"features": ["Dedicated team", "Weekly releases", "Priority support"],
+								"cta_label": "Talk to Sales",
+								"highlighted": true
+							}
+						]
+					}
+				},
+				{"type": "footer", "content": {"logo_text": "Acme Corp"}}
+			]
+		},
+		{
+			"title": "Contact",
+			"slug": "contact",
+			"sections": [
+				{"type": "header", "content": {"logo_text": "Acme Corp"}},
+				{
+					"type": "contact",
+					"content": {
+						"title": "Contact us",
+						"subtitle": "Tell us about your project.",
+						"email": "hello@acmecorp.com",
+						"phone": "+1 (555) 010-2000",
+						"address": "100 Market Street, San Francisco, CA"
+					}
+				},
+				{"type": "footer", "content": {"logo_text": "Acme Corp"}}
+			]
+		}
+	],
+	"menus": [
+		{
+			"name": "Main Navigation",
+			"location": "Header",
+			"items": [
+				{"label": "Home", "page": "Home", "url": "/wc"},
+				{"label": "About", "page": "About", "url": "/wc/about"},
+				{"label": "Services", "page": "Services", "url": "/wc/services"},
+				{"label": "Contact", "page": "Contact", "url": "/wc/contact"}
+			]
+		}
+	],
+	"assets": []
+}

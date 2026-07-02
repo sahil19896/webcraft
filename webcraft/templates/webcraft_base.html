@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!-- WebCraft storefront base — no Frappe navbar, footer, or breadcrumbs -->
+<html lang="{{ boot.lang or 'en' }}" dir="{{ 'rtl' if is_rtl() else 'ltr' }}">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="generator" content="frappe">
+
+	{% block meta_block %}
+		{% include "templates/includes/meta_block.html" %}
+	{% endblock %}
+
+	<title>{% block title %}{{ title | striptags }}{% endblock %}</title>
+
+	{% block favicon %}
+	<link rel="shortcut icon" href="{{ (favicon or '/assets/frappe/images/frappe-favicon.svg') | abs_url }}" type="image/x-icon">
+	{% endblock %}
+
+	{%- block head -%}
+		{% include "templates/includes/head.html" %}
+	{%- endblock -%}
+
+	{%- block head_include %}{% endblock -%}
+
+	{%- block style %}{% endblock -%}
+
+	<script>
+		window.frappe = {};
+		frappe.ready_events = [];
+		frappe.ready = function (fn) { frappe.ready_events.push(fn); };
+	</script>
+</head>
+<body class="wc-body {{ body_class or '' }}" frappe-session-status="{{ 'logged-in' if frappe.session.user != 'Guest' else 'logged-out' }}" data-path="{{ path | e }}">
+	{% block page_content %}{% endblock %}
+
+	<script>
+		frappe.boot = {{ frappe.utils.orjson_dumps(boot, default=frappe.json_handler) }};
+		frappe.sys_defaults = frappe.boot.sysdefaults;
+	</script>
+	{{ include_script('frappe-web.bundle.js') }}
+
+	{%- for link in web_include_js %}
+	{{ include_script(link) }}
+	{%- endfor -%}
+
+	{%- block script %}{% endblock %}
+	<!-- csrf_token -->
+</body>
+</html>

@@ -1,0 +1,28 @@
+<section class="wc-hero wc-animate wc-hero--{{ content.alignment or 'center' }}{% if content.overlay %} wc-hero--overlay{% endif %}" data-wc-section="hero"{% if section_id %} data-wc-section-id="{{ section_id }}"{% endif %}>
+	<div class="wc-container wc-hero__grid">
+		<div class="wc-hero__content">
+			{% if content.eyebrow %}
+			<p class="wc-eyebrow">{{ content.eyebrow }}</p>
+			{% endif %}
+			<h1 class="wc-hero__title">{{ content.title }}</h1>
+			{% if content.subtitle %}
+			<p class="wc-hero__subtitle">{{ content.subtitle }}</p>
+			{% endif %}
+			<div class="wc-hero__actions">
+				{% if content.button_label %}
+				<a class="wc-btn wc-btn--primary wc-btn--lg" href="{{ content.button_url or '#' }}">{{ content.button_label }}</a>
+				{% endif %}
+				{% if content.secondary_button_label %}
+				<a class="wc-btn wc-btn--ghost wc-btn--lg" href="{{ content.secondary_button_url or '#' }}">{{ content.secondary_button_label }}</a>
+				{% endif %}
+			</div>
+		</div>
+		{% if content.image %}
+		<div class="wc-hero__media">
+			<img src="{{ content.image }}" alt="{{ content.title or '' }}" loading="eager">
+		</div>
+		{% else %}
+		<div class="wc-hero__orb" aria-hidden="true"></div>
+		{% endif %}
+	</div>
+</section>

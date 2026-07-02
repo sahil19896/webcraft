@@ -1,0 +1,588 @@
+{
+	"key": "ecommerce",
+	"title": "Kick Store",
+	"description": "Bold streetwear e-commerce storefront with product grids, carousels, brand strips, and category tiles. Inspired by premium sneaker retailers.",
+	"category": "E-Commerce",
+	"version": "1.0.0",
+	"preview_image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800&q=80",
+	"features": ["Product catalog", "Cart & checkout", "ERPNext orders", "Brand pages"],
+	"route_prefix": "store",
+	"theme": {
+		"theme_name": "Kick Store Dark",
+		"primary_color": "#ffffff",
+		"secondary_color": "#a3a3a3",
+		"accent_color": "#f97316",
+		"background_color": "#0a0a0a",
+		"text_color": "#fafafa",
+		"surface_color": "#171717",
+		"font_family": "Inter, system-ui, sans-serif",
+		"heading_font": "Inter, system-ui, sans-serif",
+		"border_radius": 4,
+		"animations_enabled": 1,
+		"custom_css": ".wc-header { background: rgba(10,10,10,0.92); border-bottom: 1px solid #262626; backdrop-filter: blur(16px); } .wc-nav a { font-size: 0.8rem; letter-spacing: 0.04em; text-transform: uppercase; } .wc-btn--primary { background: #fff; color: #0a0a0a; box-shadow: none; } .wc-btn--primary:hover { background: #f5f5f5; } .wc-btn--ghost { border-color: #404040; color: #fafafa; } .wc-hero { background: #0a0a0a; padding-top: 3rem; } .wc-hero__media { border-radius: 0; min-height: 28rem; } .wc-marquee { background: #171717; color: #fafafa; border-color: #262626; } .wc-product-card { border-color: #262626; background: #111; } .wc-section__head h2 { letter-spacing: -0.03em; }"
+	},
+	"pages": [
+		{
+			"title": "Home",
+			"slug": "",
+			"is_homepage": true,
+			"seo": {
+				"title": "Kick Store | Premium Sneakers & Streetwear",
+				"description": "Shop authentic sneakers from Nike, Jordan, adidas, and New Balance. Next-day delivery on select sizes.",
+				"keywords": "sneakers, streetwear, nike, jordan, adidas"
+			},
+			"sections": [
+				{
+					"type": "header",
+					"content": {
+						"logo_text": "KICK STORE",
+						"cta_label": "Shop All",
+						"cta_url": "/store/shop",
+						"sticky": true
+					}
+				},
+				{
+					"type": "marquee",
+					"content": {
+						"items": [
+							"Free Shipping Over $150",
+							"100% Authentic Guarantee",
+							"Next Day Delivery On Select Sizes",
+							"New Drops Every Week"
+						],
+						"speed": "slow"
+					}
+				},
+				{
+					"type": "hero",
+					"content": {
+						"eyebrow": "Premium Sneakers",
+						"title": "The Latest Drops Are Live",
+						"subtitle": "Exclusive sneakers and streetwear from the world's top brands.",
+						"button_label": "Shop New In",
+						"button_url": "/store/shop",
+						"secondary_button_label": "View Brands",
+						"secondary_button_url": "/store/brands",
+						"image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=1200&q=80",
+						"alignment": "left",
+						"overlay": true
+					}
+				},
+				{
+					"type": "category_tiles",
+					"content": {
+						"title": "Shop by Category",
+						"subtitle": "Find your next pair",
+						"categories": [
+							{
+								"label": "Sneakers",
+								"url": "/store/shop",
+								"image": "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=600&q=80"
+							},
+							{
+								"label": "Running",
+								"url": "/store/shop",
+								"image": "https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=600&q=80"
+							},
+							{
+								"label": "Lifestyle",
+								"url": "/store/shop",
+								"image": "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=600&q=80"
+							},
+							{
+								"label": "Sale",
+								"url": "/store/shop",
+								"image": "https://images.unsplash.com/photo-1460353581641-37baddab0fa0?w=600&q=80"
+							}
+						]
+					}
+				},
+				{
+					"type": "product_grid",
+					"content": {
+						"title": "Featured Drops",
+						"subtitle": "Hand-picked heat for this week",
+						"columns": 4,
+						"source": "webshop",
+						"limit": 8,
+						"products": [
+							{
+								"name": "Air Jordan 1 Retro High OG",
+								"brand": "Jordan",
+								"price": "$180",
+								"image": "https://images.unsplash.com/photo-1556906781-9a412961c28c?w=600&q=80",
+								"url": "/store/shop",
+								"badge": "Hot"
+							},
+							{
+								"name": "Dunk Low Retro",
+								"brand": "Nike",
+								"price": "$115",
+								"image": "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=600&q=80",
+								"url": "/store/shop",
+								"badge": "New"
+							},
+							{
+								"name": "Samba OG",
+								"brand": "adidas",
+								"price": "$120",
+								"image": "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=600&q=80",
+								"url": "/store/shop",
+								"badge": ""
+							},
+							{
+								"name": "550 White Green",
+								"brand": "New Balance",
+								"price": "$130",
+								"image": "https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=600&q=80",
+								"url": "/store/shop",
+								"badge": "Restock"
+							},
+							{
+								"name": "Air Max 1 '87",
+								"brand": "Nike",
+								"price": "$140",
+								"image": "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=600&q=80",
+								"url": "/store/shop",
+								"badge": ""
+							},
+							{
+								"name": "Gel-Kayano 14",
+								"brand": "ASICS",
+								"price": "$159",
+								"image": "https://images.unsplash.com/photo-1460353581641-37baddab0fa0?w=600&q=80",
+								"url": "/store/shop",
+								"badge": "New"
+							},
+							{
+								"name": "Forum Low CL",
+								"brand": "adidas",
+								"price": "$110",
+								"image": "https://images.unsplash.com/photo-1584735175314-9f207ffad882?w=600&q=80",
+								"url": "/store/shop",
+								"badge": "Sale"
+							},
+							{
+								"name": "990v6 Made in USA",
+								"brand": "New Balance",
+								"price": "$199",
+								"image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&q=80",
+								"url": "/store/shop",
+								"badge": ""
+							}
+						]
+					},
+					"settings": {"source": "webshop", "limit": 8}
+				},
+				{
+					"type": "brand_logos",
+					"content": {
+						"title": "Shop Top Brands",
+						"brands": [
+							{"name": "Nike", "url": "/store/brands"},
+							{"name": "Jordan", "url": "/store/brands"},
+							{"name": "adidas", "url": "/store/brands"},
+							{"name": "New Balance", "url": "/store/brands"},
+							{"name": "ASICS", "url": "/store/brands"},
+							{"name": "Salomon", "url": "/store/brands"}
+						]
+					}
+				},
+				{
+					"type": "product_carousel",
+					"content": {
+						"title": "New In",
+						"subtitle": "Just landed — grab them before they're gone",
+						"source": "webshop",
+						"limit": 12,
+						"products": [
+							{
+								"name": "Air Max Pulse",
+								"brand": "Nike",
+								"price": "$179",
+								"image": "https://images.unsplash.com/photo-1605348539780-675ed4776823?w=600&q=80",
+								"url": "/store/shop",
+								"badge": "New"
+							},
+							{
+								"name": "Retro 4 Military Black",
+								"brand": "Jordan",
+								"price": "$215",
+								"image": "https://images.unsplash.com/photo-1556906781-9a412961c28c?w=600&q=80",
+								"url": "/store/shop",
+								"badge": "Hot"
+							},
+							{
+								"name": "Campus 00s",
+								"brand": "adidas",
+								"price": "$95",
+								"image": "https://images.unsplash.com/photo-1584735175314-9f207ffad882?w=600&q=80",
+								"url": "/store/shop",
+								"badge": ""
+							},
+							{
+								"name": "2002R Protection Pack",
+								"brand": "New Balance",
+								"price": "$169",
+								"image": "https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=600&q=80",
+								"url": "/store/shop",
+								"badge": "New"
+							},
+							{
+								"name": "Gel-1130",
+								"brand": "ASICS",
+								"price": "$125",
+								"image": "https://images.unsplash.com/photo-1460353581641-37baddab0fa0?w=600&q=80",
+								"url": "/store/shop",
+								"badge": ""
+							},
+							{
+								"name": "Air Force 1 '07",
+								"brand": "Nike",
+								"price": "$115",
+								"image": "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=600&q=80",
+								"url": "/store/shop",
+								"badge": ""
+							}
+						]
+					},
+					"settings": {"source": "webshop", "limit": 12}
+				},
+				{
+					"type": "features",
+					"content": {
+						"title": "Why shop with us",
+						"subtitle": "The Kick Store promise",
+						"items": [
+							{
+								"title": "100% Authentic",
+								"description": "Every pair verified by our in-house authentication team.",
+								"icon": "shield"
+							},
+							{
+								"title": "Fast Shipping",
+								"description": "Next-day delivery available on select sizes and regions.",
+								"icon": "zap"
+							},
+							{
+								"title": "Easy Returns",
+								"description": "30-day hassle-free returns on unworn items.",
+								"icon": "refresh"
+							}
+						]
+					}
+				},
+				{
+					"type": "cta",
+					"content": {
+						"title": "Get drop alerts",
+						"subtitle": "Be first to know when new releases go live.",
+						"button_label": "Join Newsletter",
+						"button_url": "/store/contact"
+					}
+				},
+				{
+					"type": "footer",
+					"content": {
+						"logo_text": "KICK STORE",
+						"copyright": "© 2026 Kick Store. All rights reserved.",
+						"social_links": [
+							{"platform": "instagram", "url": "#"},
+							{"platform": "twitter", "url": "#"},
+							{"platform": "tiktok", "url": "#"}
+						]
+					}
+				}
+			]
+		},
+		{
+			"title": "Shop",
+			"slug": "shop",
+			"seo": {
+				"title": "Shop All Sneakers | Kick Store",
+				"description": "Browse our full collection of authentic sneakers and streetwear."
+			},
+			"sections": [
+				{
+					"type": "header",
+					"content": {"logo_text": "KICK STORE", "cta_label": "Cart", "cta_url": "/all-products"}
+				},
+				{
+					"type": "hero",
+					"content": {
+						"title": "Shop All",
+						"subtitle": "Every drop, every brand, one place.",
+						"alignment": "center",
+						"image": "https://images.unsplash.com/photo-1605348539780-675ed4776823?w=1200&q=80"
+					}
+				},
+				{
+					"type": "product_grid",
+					"content": {
+						"title": "All Products",
+						"columns": 4,
+						"source": "webshop",
+						"limit": 16,
+						"products": [
+							{
+								"name": "Air Jordan 1 Retro High OG",
+								"brand": "Jordan",
+								"price": "$180",
+								"image": "https://images.unsplash.com/photo-1556906781-9a412961c28c?w=600&q=80",
+								"url": "/store/shop",
+								"badge": "Hot"
+							},
+							{
+								"name": "Dunk Low Retro",
+								"brand": "Nike",
+								"price": "$115",
+								"image": "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=600&q=80",
+								"url": "/store/shop",
+								"badge": "New"
+							},
+							{
+								"name": "Samba OG",
+								"brand": "adidas",
+								"price": "$120",
+								"image": "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=600&q=80",
+								"url": "/store/shop",
+								"badge": ""
+							},
+							{
+								"name": "550 White Green",
+								"brand": "New Balance",
+								"price": "$130",
+								"image": "https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=600&q=80",
+								"url": "/store/shop",
+								"badge": "Restock"
+							},
+							{
+								"name": "Air Max 1 '87",
+								"brand": "Nike",
+								"price": "$140",
+								"image": "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=600&q=80",
+								"url": "/store/shop",
+								"badge": ""
+							},
+							{
+								"name": "Gel-Kayano 14",
+								"brand": "ASICS",
+								"price": "$159",
+								"image": "https://images.unsplash.com/photo-1460353581641-37baddab0fa0?w=600&q=80",
+								"url": "/store/shop",
+								"badge": "New"
+							},
+							{
+								"name": "Forum Low CL",
+								"brand": "adidas",
+								"price": "$110",
+								"image": "https://images.unsplash.com/photo-1584735175314-9f207ffad882?w=600&q=80",
+								"url": "/store/shop",
+								"badge": "Sale"
+							},
+							{
+								"name": "990v6 Made in USA",
+								"brand": "New Balance",
+								"price": "$199",
+								"image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&q=80",
+								"url": "/store/shop",
+								"badge": ""
+							}
+						]
+					},
+					"settings": {"source": "webshop", "limit": 16}
+				},
+				{"type": "footer", "content": {"logo_text": "KICK STORE"}}
+			]
+		},
+		{
+			"title": "Brands",
+			"slug": "brands",
+			"seo": {
+				"title": "Brands | Kick Store",
+				"description": "Shop Nike, Jordan, adidas, New Balance, ASICS, and more."
+			},
+			"sections": [
+				{"type": "header", "content": {"logo_text": "KICK STORE"}},
+				{
+					"type": "hero",
+					"content": {
+						"title": "Our Brands",
+						"subtitle": "Only the labels you trust.",
+						"alignment": "center"
+					}
+				},
+				{
+					"type": "brand_logos",
+					"content": {
+						"title": "Featured Brands",
+						"brands": [
+							{"name": "Nike", "url": "/store/shop"},
+							{"name": "Jordan", "url": "/store/shop"},
+							{"name": "adidas", "url": "/store/shop"},
+							{"name": "New Balance", "url": "/store/shop"},
+							{"name": "ASICS", "url": "/store/shop"},
+							{"name": "Salomon", "url": "/store/shop"},
+							{"name": "Converse", "url": "/store/shop"},
+							{"name": "Puma", "url": "/store/shop"}
+						]
+					}
+				},
+				{
+					"type": "text",
+					"content": {
+						"title": "Authenticity Guaranteed",
+						"body": "<p>We partner directly with authorized distributors and verify every product through our multi-step authentication process. Shop with confidence.</p>"
+					}
+				},
+				{"type": "footer", "content": {"logo_text": "KICK STORE"}}
+			]
+		},
+		{
+			"title": "About",
+			"slug": "about",
+			"sections": [
+				{"type": "header", "content": {"logo_text": "KICK STORE"}},
+				{
+					"type": "hero",
+					"content": {
+						"title": "About Kick Store",
+						"subtitle": "Born from sneaker culture. Built for collectors.",
+						"alignment": "center"
+					}
+				},
+				{
+					"type": "stats",
+					"content": {
+						"items": [
+							{"value": "50K+", "label": "Happy customers"},
+							{"value": "100%", "label": "Authentic guarantee"},
+							{"value": "24h", "label": "Express dispatch"}
+						]
+					}
+				},
+				{
+					"type": "text",
+					"content": {
+						"title": "Our Story",
+						"body": "<p>Kick Store started in 2019 as a small sneaker consignment shop. Today we ship authentic heat worldwide, with same-day dispatch on in-stock pairs and a team obsessed with the culture.</p>"
+					}
+				},
+				{"type": "footer", "content": {"logo_text": "KICK STORE"}}
+			]
+		},
+		{
+			"title": "FAQ",
+			"slug": "faq",
+			"sections": [
+				{"type": "header", "content": {"logo_text": "KICK STORE"}},
+				{
+					"type": "faq",
+					"content": {
+						"title": "Frequently Asked Questions",
+						"items": [
+							{
+								"question": "Are all products authentic?",
+								"answer": "Yes. Every item passes our authentication checklist before shipping."
+							},
+							{
+								"question": "How long does shipping take?",
+								"answer": "Standard delivery is 3–5 business days. Next-day is available on select items."
+							},
+							{
+								"question": "What is your returns policy?",
+								"answer": "Unworn items can be returned within 30 days for a full refund."
+							},
+							{
+								"question": "Do you ship internationally?",
+								"answer": "Yes, we ship to over 40 countries worldwide."
+							}
+						]
+					}
+				},
+				{"type": "footer", "content": {"logo_text": "KICK STORE"}}
+			]
+		},
+		{
+			"title": "Contact",
+			"slug": "contact",
+			"sections": [
+				{"type": "header", "content": {"logo_text": "KICK STORE"}},
+				{
+					"type": "contact",
+					"content": {
+						"title": "Contact us",
+						"subtitle": "Questions about an order or a drop? We're here to help.",
+						"email": "support@kickstore.com",
+						"phone": "+1 (555) 019-9000",
+						"address": "42 Sneaker Lane, London, UK"
+					}
+				},
+				{"type": "footer", "content": {"logo_text": "KICK STORE"}}
+			]
+		},
+		{
+			"title": "Cart",
+			"slug": "cart",
+			"seo": {
+				"title": "Your Cart | Kick Store",
+				"description": "Review items in your cart before checkout."
+			},
+			"sections": [
+				{"type": "header", "content": {"logo_text": "KICK STORE"}},
+				{
+					"type": "cart",
+					"content": {
+						"title": "Your Cart",
+						"subtitle": "Items are saved as a quotation until you check out."
+					}
+				},
+				{"type": "footer", "content": {"logo_text": "KICK STORE"}}
+			]
+		},
+		{
+			"title": "Checkout",
+			"slug": "checkout",
+			"seo": {
+				"title": "Checkout | Kick Store",
+				"description": "Complete your order — quotation converts to a sales order."
+			},
+			"sections": [
+				{"type": "header", "content": {"logo_text": "KICK STORE"}},
+				{
+					"type": "checkout",
+					"content": {
+						"title": "Checkout",
+						"subtitle": "Enter your shipping details to place your order."
+					}
+				},
+				{"type": "footer", "content": {"logo_text": "KICK STORE"}}
+			]
+		}
+	],
+	"menus": [
+		{
+			"name": "Store Navigation",
+			"location": "Header",
+			"items": [
+				{"label": "Home", "page": "Home", "url": "/store"},
+				{"label": "Shop", "page": "Shop", "url": "/store/shop"},
+				{"label": "Brands", "page": "Brands", "url": "/store/brands"},
+				{"label": "About", "page": "About", "url": "/store/about"},
+				{"label": "FAQ", "page": "FAQ", "url": "/store/faq"},
+				{"label": "Contact", "page": "Contact", "url": "/store/contact"}
+			]
+		},
+		{
+			"name": "Store Footer",
+			"location": "Footer",
+			"items": [
+				{"label": "Shop", "page": "Shop", "url": "/store/shop"},
+				{"label": "About", "page": "About", "url": "/store/about"},
+				{"label": "FAQ", "page": "FAQ", "url": "/store/faq"},
+				{"label": "Contact", "page": "Contact", "url": "/store/contact"}
+			]
+		}
+	],
+	"assets": []
+}

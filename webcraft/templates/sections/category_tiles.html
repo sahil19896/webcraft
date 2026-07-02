@@ -1,0 +1,24 @@
+<section class="wc-section wc-animate" data-wc-section="category_tiles"{% if section_id %} data-wc-section-id="{{ section_id }}"{% endif %}>
+	<div class="wc-container">
+		{% if content.title %}
+		<div class="wc-section__head">
+			<h2>{{ content.title }}</h2>
+			{% if content.subtitle %}<p>{{ content.subtitle }}</p>{% endif %}
+		</div>
+		{% endif %}
+		<div class="wc-category-tiles">
+			{% for cat in content.categories or [] %}
+			<a class="wc-category-tile" href="{{ cat.url or '#' }}">
+				<div class="wc-category-tile__media">
+					{% if cat.image %}
+					<img src="{{ cat.image }}" alt="{{ cat.label }}" loading="lazy">
+					{% else %}
+					<div class="wc-category-tile__placeholder"></div>
+					{% endif %}
+				</div>
+				<span class="wc-category-tile__label">{{ cat.label }}</span>
+			</a>
+			{% endfor %}
+		</div>
+	</div>
+</section>

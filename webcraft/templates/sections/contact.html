@@ -1,0 +1,20 @@
+<section class="wc-section wc-animate" data-wc-section="contact"{% if section_id %} data-wc-section-id="{{ section_id }}"{% endif %} id="contact">
+	<div class="wc-container wc-contact">
+		<div class="wc-contact__info">
+			<h2>{{ content.title or 'Contact' }}</h2>
+			{% if content.subtitle %}<p>{{ content.subtitle }}</p>{% endif %}
+			<ul>
+				{% if content.email %}<li class="wc-contact__email"><strong>Email:</strong> {{ content.email }}</li>{% endif %}
+				{% if content.phone %}<li class="wc-contact__phone"><strong>Phone:</strong> {{ content.phone }}</li>{% endif %}
+				{% if content.address %}<li class="wc-contact__address"><strong>Address:</strong> {{ content.address }}</li>{% endif %}
+			</ul>
+		</div>
+		<div class="wc-contact__form">
+			{% if content.form %}
+				{{ render_form_html(content.form) | safe }}
+			{% else %}
+				<p class="wc-muted">{{ _('No form linked to this section.') }}</p>
+			{% endif %}
+		</div>
+	</div>
+</section>

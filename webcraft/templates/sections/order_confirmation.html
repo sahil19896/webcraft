@@ -1,0 +1,15 @@
+<section class="wc-section wc-animate" data-wc-section="order_confirmation"{% if section_id %} data-wc-section-id="{{ section_id }}"{% endif %}>
+	<div class="wc-container wc-commerce">
+		<div class="wc-order-confirm" data-wc-order-root data-order-name="{{ content.order_name or '' }}">
+			<div class="wc-order-confirm__loading" data-wc-order-loading>Loading order…</div>
+			<div class="wc-order-confirm__body" data-wc-order-body hidden>
+				<h1>Thank you for your order</h1>
+				<p class="wc-order-confirm__id">Order <strong data-wc-order-id></strong></p>
+				<div data-wc-order-items></div>
+				<p class="wc-order-confirm__total">Total: <strong data-wc-order-total></strong></p>
+				<a class="wc-btn wc-btn--primary" href="{{ store_home_url or '/' ~ (store_route_prefix or 'store') }}">Continue Shopping</a>
+			</div>
+			<p class="wc-commerce__message" data-wc-commerce-message hidden></p>
+		</div>
+	</div>
+</section>

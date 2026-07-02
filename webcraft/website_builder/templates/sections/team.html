@@ -1,0 +1,15 @@
+<section class="wc-section wc-animate" data-wc-section="team">
+	<div class="wc-container">
+		{% if content.title %}<h2 class="wc-section__title">{{ content.title }}</h2>{% endif %}
+		<div class="wc-grid wc-grid--2">
+			{% for member in content.members or [] %}
+			<article class="wc-card wc-card--team">
+				<div class="wc-avatar">{{ (member.name or '?')[0] }}</div>
+				<h3>{{ member.name }}</h3>
+				<p class="wc-muted">{{ member.role }}</p>
+				<p>{{ member.bio }}</p>
+			</article>
+			{% endfor %}
+		</div>
+	</div>
+</section>

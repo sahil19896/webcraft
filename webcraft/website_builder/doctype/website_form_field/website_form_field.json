@@ -1,0 +1,98 @@
+{
+ "actions": [],
+ "creation": "2026-06-28 10:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "field_type",
+  "label",
+  "fieldname",
+  "required",
+  "placeholder",
+  "default_value",
+  "help_text",
+  "width",
+  "options",
+  "validation",
+  "sort_order"
+ ],
+ "fields": [
+  {
+   "fieldname": "field_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Field Type",
+   "options": "Text\nEmail\nPhone\nURL\nDate\nTime\nCheckbox\nSwitch\nSelect\nRadio\nTextarea\nNumber\nPassword\nHeading\nDivider\nFile Upload\nImage Upload\nAddress\nCurrency\nRating\nColor\nSlider",
+   "reqd": 1
+  },
+  {
+   "fieldname": "label",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Label"
+  },
+  {
+   "fieldname": "fieldname",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Fieldname"
+  },
+  {
+   "default": "0",
+   "fieldname": "required",
+   "fieldtype": "Check",
+   "label": "Required"
+  },
+  {
+   "fieldname": "placeholder",
+   "fieldtype": "Data",
+   "label": "Placeholder"
+  },
+  {
+   "fieldname": "default_value",
+   "fieldtype": "Data",
+   "label": "Default Value"
+  },
+  {
+   "fieldname": "help_text",
+   "fieldtype": "Small Text",
+   "label": "Help Text"
+  },
+  {
+   "default": "Full",
+   "fieldname": "width",
+   "fieldtype": "Select",
+   "label": "Width",
+   "options": "Full\nHalf\nThird"
+  },
+  {
+   "fieldname": "options",
+   "fieldtype": "Small Text",
+   "label": "Options"
+  },
+  {
+   "fieldname": "validation",
+   "fieldtype": "JSON",
+   "label": "Validation"
+  },
+  {
+   "default": "0",
+   "fieldname": "sort_order",
+   "fieldtype": "Int",
+   "label": "Sort Order"
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-06-28 10:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Website Builder",
+ "name": "Website Form Field",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "sort_order",
+ "sort_order": "ASC",
+ "states": []
+}

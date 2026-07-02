@@ -1,0 +1,26 @@
+<section class="wc-section wc-animate" data-wc-section="pricing"{% if section_id %} data-wc-section-id="{{ section_id }}"{% endif %}>
+	<div class="wc-container">
+		{% if content.title %}
+		<div class="wc-section__head">
+			<h2>{{ content.title }}</h2>
+			{% if content.subtitle %}<p>{{ content.subtitle }}</p>{% endif %}
+		</div>
+		{% endif %}
+		<div class="wc-grid wc-grid--{{ (content.plans or [])|length if (content.plans or [])|length <= 3 else 3 }}">
+			{% for plan in content.plans or [] %}
+			<article class="wc-card wc-card--pricing {% if plan.highlighted %}is-highlighted{% endif %}">
+				<h3>{{ plan.name }}</h3>
+				<div class="wc-price">{{ plan.price }}<span>{{ plan.period or '' }}</span></div>
+				<ul>
+					{% for feature in plan.features or [] %}
+					<li>{{ feature }}</li>
+					{% endfor %}
+				</ul>
+				<a class="wc-btn {% if plan.highlighted %}wc-btn--primary{% else %}wc-btn--ghost{% endif %}" href="#">
+					{{ plan.cta_label or 'Choose Plan' }}
+				</a>
+			</article>
+			{% endfor %}
+		</div>
+	</div>
+</section>
